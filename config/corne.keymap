@@ -37,12 +37,14 @@
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
             label = "GRAVE_ESCAPE";
+            #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp GRAVE>;
             mods = <(MOD_LGUI)>;
         };
         m_h: m_h {
             compatible = "zmk,behavior-mod-morph";
             label = "m_h";
+            #binding-cells = <0>;
             bindings = <&kp M>, <&kp H>;
             mods = <(MOD_LGUI)>;
         };
