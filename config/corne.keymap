@@ -14,16 +14,16 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BSPC |
+// | ESC |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  ENTER   |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT  |
+//                    | GUI | MEH/SPC | LALT |   | CTRL | to1 | ALT |
                         bindings = <
             &kp TAB &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L &kp U     &kp Y   &kp SEMI   &kp BSPC
             &kp ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E     &kp I   &kp O      &kp ENTER
-            &kp LSHFT &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH   &kp RSHIFT
-            &kp LGUI &mt LC(LS(LALT)) SPC &sk LSHIFT       &sk RCTRL &to 1 &kp RALT
-                        >;
+            &sk LSHFT &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH &sk RSHIFT
+            &kp LGUI &mt LC(LS(LALT)) SPC &kp LALT       &sk RCTRL &to 1 &kp RALT
+                >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 5 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                           	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
