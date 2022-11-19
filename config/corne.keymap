@@ -91,8 +91,8 @@
             bindings = <
             &gresc           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &sk LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
-            &sk LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &to 2
-                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &sk RALT   &tog 3   &to 1
+            &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &to 2
+                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp RALT   &tog 3   &to 1
         >;
 
         };
