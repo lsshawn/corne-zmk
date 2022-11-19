@@ -14,39 +14,33 @@
 
                 default_layer {
                     // -----------------------------------------------------------------------------------------
-                    // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BSPC |
-                    // | ESC |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  ENTER   |
-                    // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT  |
-                    //                    | GUI | MEH/SPC | LALT |   | CTRL | to1 | ALT |
+                    // | TAB  |  Q  |  W  |  F  |  P  |  B  |     |  J  |  L   |  U  |  Y  |  ;  | BSPC     |
+                    // | ESC  |  A  |  R  |  S  |  T  |  G  |     |  M  |  N   |  E  |  I  |  O  |  ENTER   |
+                    // | SHFT |  Z  |  X  |  C  |  D  |  V  |     |  K  |  H   |  ,  |  .  |  /  | SHFT     |
+                    //               | GUI | MEH/SPC | LALT |     | CTRL | to1 | ALT |
                     bindings = <
-                    &kp TAB &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L &kp U     &kp Y   &kp SEMI   &kp BSPC
-                    &kp ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E     &kp I   &kp O      &kp ENTER
-                    &sk LSHFT &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH &sk RSHIFT
-                    &kp LGUI &mt LC(LS(LALT)) SPC &kp LALT       &sk RCTRL &to 1 &kp RALT
+                    &kp TAB     &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
+                    &kp ESC     &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I     &kp O      &kp ENTER
+                    &sk LSHFT   &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &sk RSHIFT
+                            &kp LGUI   &mt LC(LS(LALT)) SPC   &kp LALT           &sk RCTRL   &to 1   &kp RALT
                 >;
                 };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 5 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
+                layer_one {
+                    // -----------------------------------------------------------------------------------------
+                    // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+                    // | ESC |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+                    // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+                    //                    | GUI |     | SPC |   | ENT |     | ALT |
+                    bindings = <
+                    &kp TAB     &kp EXCL   &kp AT   &kp HASH   &kp DLLR   &kp PRCNT           &kp CARET   &kp AMPS   &kp KP_MULTIPLY   &kp LPAR     &kp RPAR   &kp BSPC
+                    &kp ESC     &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I     &kp O      &kp ENTER
+                    &sk LSHFT   &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &sk RSHIFT
+                            &kp LGUI   &to 0   &kp LALT           &sk RCTRL   &to 2   &kp RALT
+                >;
                 };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                layer_two {
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &kp TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
    &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
