@@ -76,15 +76,15 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // | TAB  |  Q  |  W  |  F  |  P  |  B  | ------ |  J   |  L   |  U   |  Y   |  ;   | BSPC     |
-            // | ESC  |  A  |  R  |  S  |  T  |  G  | ------ |  M   |  N   |  E   |  I   |  O   | ENTER    |
-            // | CTRL |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  <,  |  >.  |  ?/  | to3      |
-            //              | GUI | SPC/MEH | LALT | ------ | SHIFT | tog3 | to1  |
+            // | TAB   |  Q  |  W  |  F  |  P  |  B  | ------ |  J   |  L   |  U   |  Y   |  ;   | BSPC     |
+            // | ESC   |  A  |  R  |  S  |  T  |  G  | ------ |  M   |  N   |  E   |  I   |  O   | ENTER    |
+            // | SHIFT |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  <,  |  >.  |  ?/  | to2      |
+            //               | GUI |  SPC/MEH  | CTRL| ------ | ALT  | tog3 | to1  |
             bindings = <
             &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &gresc            &kp A   &kp R   &kp S   &kp T   &kp G           &kp M    &n_h    &e_j        &i_k      &o_l       &kp ENTER
-            &sk LCTRL         &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K    &kp H   &kp COMMA   &kp DOT   &kp FSLH   &to 2
-                          &kp LGUI   &mt LC(LS(LALT)) SPC   &kp LALT           &sk LSHIFT   &tog 3   &to 1
+            &sk LSHIRT         &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K    &kp H   &kp COMMA   &kp DOT   &kp FSLH   &to 2
+                          &kp LGUI   &mt LC(LS(LALT)) SPC   &kp LCTRL           &sk LALT   &tog 3   &to 1
         >;
         };
         layer_one {
