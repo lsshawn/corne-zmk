@@ -13,16 +13,16 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BSPC |
-// | ESC |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  ENTER   |
-// | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT  |
-//                    | GUI | MEH/SPC | LALT |   | CTRL | to1 | ALT |
-                        bindings = <
-            &kp TAB &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L &kp U     &kp Y   &kp SEMI   &kp BSPC
-            &kp ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E     &kp I   &kp O      &kp ENTER
-            &sk LSHFT &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH &sk RSHIFT
-            &kp LGUI &mt LC(LS(LALT)) SPC &kp LALT       &sk RCTRL &to 1 &kp RALT
+                    // -----------------------------------------------------------------------------------------
+                    // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BSPC |
+                    // | ESC |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  ENTER   |
+                    // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT  |
+                    //                    | GUI | MEH/SPC | LALT |   | CTRL | to1 | ALT |
+                    bindings = <
+                    &kp TAB &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L &kp U     &kp Y   &kp SEMI   &kp BSPC
+                    &kp ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N &kp E     &kp I   &kp O      &kp ENTER
+                    &sk LSHFT &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H &kp COMMA &kp DOT &kp FSLH &sk RSHIFT
+                    &kp LGUI &mt LC(LS(LALT)) SPC &kp LALT       &sk RCTRL &to 1 &kp RALT
                 >;
                 };
                 lower_layer {
