@@ -37,8 +37,13 @@
         gresc: grave_escape {
             compatible = "zmk,behavior-mod-morph";
             label = "GRAVE_ESCAPE";
-            #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI)>;
+        };
+        m_h: m_h {
+            compatible = "zmk,behavior-mod-morph";
+            label = "m_h";
+            bindings = <&kp M>, <&kp H>;
             mods = <(MOD_LGUI)>;
         };
     };
@@ -54,7 +59,7 @@
             //               | GUI | SPC/MEH | LALT | ------ | CTRL | ALT  | to1  |
             bindings = <
             &kp TAB            &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
-            &gresc            &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I     &kp O      &kp ENTER
+            &gresc            &kp A   &kp R   &kp S   &kp T   &kp G           &m_h   &kp N   &kp E       &kp I     &kp O      &kp ENTER
             &sk LSHIFT         &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &to 2
                           &kp LGUI   &mt LC(LS(LALT)) SPC   &kp LALT           &sk LCTRL   &to 3   &to 1
         >;
