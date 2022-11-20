@@ -41,40 +41,12 @@
             bindings = <&kp ESC>, <&kp GRAVE>;
             mods = <(MOD_LGUI)>;
         };
-        m_h: m_h {
-            compatible = "zmk,behavior-mod-morph";
-            label = "m_h";
-            #binding-cells = <0>;
-            bindings = <&kp M>, <&kp H>;
-            mods = <(MOD_LGUI)>;
-        };
-        n_j: n_j {
-            compatible = "zmk,behavior-mod-morph";
-            label = "n_j";
-            #binding-cells = <0>;
-            bindings = <&kp N>, <&kp J>;
-            mods = <(MOD_LGUI)>;
-        };
-        e_k: e_k {
-            compatible = "zmk,behavior-mod-morph";
-            label = "e_k";
-            #binding-cells = <0>;
-            bindings = <&kp E>, <&kp K>;
-            mods = <(MOD_LGUI)>;
-        };
-        i_l: i_l {
-            compatible = "zmk,behavior-mod-morph";
-            label = "i_l";
-            #binding-cells = <0>;
-            bindings = <&kp I>, <&kp L>;
-            mods = <(MOD_LGUI)>;
-             };
         space_tab: space_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "space_tab";
             #binding-cells = <0>;
             bindings = <&kp SPC>, <&kp TAB>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
+            mods = <(MOD_LCTL)>;
         };
         dot_comma: dot_comma {
             compatible = "zmk,behavior-mod-morph";
@@ -118,7 +90,7 @@
             //               | GUI |  SPC/MEH  | ALT | ------ | mo3  | to1 |  to2 |
             bindings = <
             &gresc           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
-            &kp LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
+            &kp LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
             &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &kp MINUS
                      &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &mo 3   &mo1_to1   &enter_to2 
         >;
