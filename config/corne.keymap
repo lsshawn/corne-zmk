@@ -118,7 +118,7 @@
             //               | GUI |  SPC/MEH  | ALT | ------ | BSPC  | to1 |  to2 |
             bindings = <
             &gresc           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
-            &sk LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
+            &kp LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
             &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &kp MINUS
                      &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp BSPC   &mo1_to1   &enter_to2 
         >;
@@ -138,14 +138,14 @@
         };
         layer_two {
             // -----------------------------------------------------------------------------------------
-            // |        | UP   |       | PLAY/PAUSE |  VOL+  |  BRIGHT+  | ------ |  =  |  7  |  8  |  9  |  *  |          |
-            // |  LEFT  | DOWN | RIGHT | MUTE       |  VOL-  |  BRIGHT-  | ------ |  /  |  4  |  5  |  6  |  -  |          |
-            // | BT_CLR | BT1  | BT2   | BT3        |  BT4   |  BT5      | ------ |  0  |  1  |  2  |  3  |  +  |    ^     |
+            // |        |        | UP    |        |  BRIGHT-  |  BRIGHT+  | ------ |  =  |  7  |  8  |  9  |  *  |          |
+            // |        |  LEFT  | DOWN  | RIGHT  |  VOL-     |  VOL+     | ------ |  /  |  4  |  5  |  6  |  -  |          |
+            // | BT_CLR | BT1    | BT2   | BT3    |  PLAY     |  MUTE     | ------ |  0  |  1  |  2  |  3  |  +  |    ^     |
             //                                           |     |    |    | ------ |     | to0 | to0 |
             bindings = <
-            &trans       &kp UP          &trans         &kp C_PP       &kp C_VOL_UP   &kp C_BRI_UP   	      &kp EQUAL   &kp N7   &kp N8   &kp N9   &kp KP_MULTIPLY   &trans
-            &kp LEFT     &kp DOWN        &kp RIGHT      &kp C_MUTE     &kp C_VOL_DN   &kp C_BRI_DN    	    &kp FSLH    &kp N4   &kp N5   &kp N6   &kp MINUS         &trans
-            &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4          &kp N0      &kp N1   &kp N2   &kp N3   &kp PLUS          &kp CARET
+            &trans       &trans          &kp UP         &trans         &kp C_BRI_DN   &kp C_BRI_UP   	      &kp EQUAL   &kp N7   &kp N8   &kp N9   &kp KP_MULTIPLY   &trans
+            &trans       &kp LEFT        &kp DOWN       &kp RIGHT      &kp C_VOL_DN   &kp C_VOL_UP    	    &kp FSLH    &kp N4   &kp N5   &kp N6   &kp MINUS         &trans
+            &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt C_PP       &bt C_MUTE            &kp N0      &kp N1   &kp N2   &kp N3   &kp PLUS          &kp CARET
                                                         &trans         &trans         &trans  				      &trans      &to 0   &to 0
         >;
         };
