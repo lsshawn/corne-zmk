@@ -97,6 +97,13 @@
             bindings = <&kp ENTER>, <&to 2>;
             mods = <(MOD_LGUI)>;
         };
+        mo1_to1: mo1_to1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "mo1_to1";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&to 1>;
+            mods = <(MOD_LGUI)>;
+        };
     };
 
 
@@ -107,13 +114,13 @@
             // -----------------------------------------------------------------------------------------
             // | ESC/` |  Q  |  W  |  F  |  P  |  B  | ------ |  J   |  L   |  U   |  Y   |  ;   | BSPC     |
             // | SHIFT |  A  |  R  |  S  |  T  |  G  | ------ |  M   |  N   |  E   |  I   |  O   | ENTER    |
-            // | CTRL  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  <,  |  >.  |  ?/  |         |
+            // | CTRL  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  <,  |  >.  |  ?/  |   -_     |
             //               | GUI |  SPC/MEH  | ALT | ------ | BSPC  | to1 |  to2 |
             bindings = <
             &gresc           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &sk LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
-            &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &trans
-                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp BSPC   &to 1   &enter_to2 
+            &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &kp MINUS
+                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp BSPC   &mo1_to1   &enter_to2 
         >;
         };
         layer_one {
