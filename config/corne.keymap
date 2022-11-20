@@ -74,14 +74,14 @@
             label = "space_tab";
             #binding-cells = <0>;
             bindings = <&kp SPC>, <&kp TAB>;
-            mods = <(MOD_LGUI)>;
+            mods = <(MOD_LGUI|MOD_LSFT)>;
         };
         dot_comma: dot_comma {
             compatible = "zmk,behavior-mod-morph";
             label = "dot_comma";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COMMA>;
-            mods = <(MOD_LSHFT)>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
