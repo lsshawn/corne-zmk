@@ -68,7 +68,7 @@
             #binding-cells = <0>;
             bindings = <&kp I>, <&kp L>;
             mods = <(MOD_LGUI)>;
-        };
+             };
         space_tab: space_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "space_tab";
@@ -82,6 +82,20 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COMMA>;
             mods = <(MOD_LSFT)>;
+        };
+        bspc_del: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "dot_comma";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT)>;
+        };
+        enter_to2: enter_to2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "enter_to2";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER>, <&to 2>;
+            mods = <(MOD_LGUI)>;
         };
     };
 
@@ -99,7 +113,7 @@
             &gresc           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &sk LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
             &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &trans
-                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp BSPC   &to 1   &to 2
+                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp BSPC   &to 1   &enter_to2 
         >;
         };
         layer_one {
@@ -112,8 +126,7 @@
             &trans     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT          &kp CARET       &kp AMPS   &kp STAR   &kp APOS   &kp BSLH   &trans
             &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5             &kp N6          &kp N7     &kp N8     &kp N9     &kp N0     &trans
             &trans     &kp LBKT   &kp RBKT   &kp LPAR   &kp RPAR   &kp MINUS          &dot_comma      &kp LT     &kp GT   &kp SEMI     &kp FSLH   &kp EQUAL
-                                             &trans     &trans     &trans  				    &trans   &to 0     &to 2
-        >;
+                                             &trans     &trans     &trans  				    &trans   &to 0     &enter_to2
         };
         layer_two {
             // -----------------------------------------------------------------------------------------
