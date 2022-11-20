@@ -74,7 +74,7 @@
             label = "space_tab";
             #binding-cells = <0>;
             bindings = <&kp SPC>, <&kp TAB>;
-            mods = <(MOD_LGUI|MOD_LSFT)>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
         };
         dot_comma: dot_comma {
             compatible = "zmk,behavior-mod-morph";
@@ -115,12 +115,12 @@
             // | ESC/` |  Q  |  W  |  F  |  P  |  B  | ------ |  J   |  L   |  U   |  Y   |  ;   | BSPC     |
             // | SHIFT |  A  |  R  |  S  |  T  |  G  | ------ |  M   |  N   |  E   |  I   |  O   | ENTER    |
             // | CTRL  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  <,  |  >.  |  ?/  |   -_     |
-            //               | GUI |  SPC/MEH  | ALT | ------ | BSPC  | to1 |  to2 |
+            //               | GUI |  SPC/MEH  | ALT | ------ | mo4  | to1 |  to2 |
             bindings = <
             &gresc           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &kp LSHIFT       &kp A   &kp R   &kp S   &kp T   &kp G           &m_h    &n_j    &e_k        &i_l      &kp O      &kp ENTER
             &kp LCTRL        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &kp MINUS
-                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &kp BSPC   &mo1_to1   &enter_to2 
+                     &kp LGUI   &space_tab   &mt LC(LS(LALT)) LALT           &mo 4   &mo1_to1   &enter_to2 
         >;
         };
         layer_one {
