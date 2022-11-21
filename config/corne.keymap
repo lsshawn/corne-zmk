@@ -87,12 +87,12 @@
             // | TAB |  Q  |  W  |  F  |  P  |  B  | ------ |  J   |  L   |  U   |  Y   |  ;   | BSPC     |
             // | ESC/` |  A  |  R  |  S  |  T  |  G  | ------ |  M   |  N   |  E   |  I   |  O   | ENTER    |
             // | LSHIFT  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  >.  | <, |  ?/  |   SHIFT     |
-            //               | GUI |  SPC/LCTRL  | CTRL/hyper | ------ | mo3  | to1 |  to2 |
+            //               | GUI |  SPC/LCTRL  | CTRL/hyper | ------ | to3  | to1 |  to2 |
             bindings = <
             &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &gresc       &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
             &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp DOT   &kp COMMA   &kp FSLH   &sk RSHIFT
-                     &kp LGUI   &mt LCTRL SPACE    &mt LC(LS(LA(LGUI))) LCTRL           &mo 3   &mo1_to1   &enter_to2 
+                     &kp LGUI   &mt LCTRL SPACE    &mt LC(LS(LA(LGUI))) LCTRL           &to 3   &mo1_to1   &enter_to2 
         >;
         };
         layer_one {
@@ -123,15 +123,15 @@
         };
         temp_layer {
             // -----------------------------------------------------------------------------------------
-            // |      |      |  UP  |       |       |       | ------ |     |     |     |     |     |         |
-            // |      | LEFT | DOWN | RIGHT |       |       | ------ |  H  |  J  |  K  |  L  |     |         |
-            // |      |      |      |       |       |       | ------ |     |     |     |     |     |         |
+            // |      |  1  |  2  |  3  |  4  |  5  | ------ |  6   |  7   |  8  |  9 |  0  |      |
+            // |      |  | UP |  |       |       | ------ |  H  |  J  |  K  |  L  |     |         |
+            // |      | LEFT     | DOWN     |    RIGHT   |       |       | ------ |     |     |     |     |     |         |
             //                              |     |    |    | ------ |     |     |     |
             bindings = <
-            &trans   &trans     &kp UP     &trans      &trans   &trans            &trans   &trans   &trans   &trans   &trans   &trans
-            &trans   &kp LEFT   &kp DOWN   &kp RIGHT   &trans   &trans            &kp H    &kp J    &kp K    &kp L    &trans   &trans
-            &trans   &trans     &trans     &trans      &trans   &trans            &trans   &trans   &trans   &trans   &trans   &to 0
-                                           &trans      &trans   &trans  				  &trans   &trans   &trans
+            &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5             &kp N6          &kp N7     &kp N8     &kp N9     &kp N0     &trans
+            &trans   &trans   &kp UP   &trans   &trans   &trans            &kp H    &kp J    &kp K    &kp L    &trans   &trans
+            &trans   &kp LEFT     &kp DOWN     &kp RIGHT      &trans   &trans            &trans   &trans   &trans   &trans   &trans   &to 0
+                                           &trans      &trans   &trans  				  &to 0   &trans   &trans
         >;
         };
     };
