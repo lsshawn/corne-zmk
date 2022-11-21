@@ -86,12 +86,12 @@
             // -----------------------------------------------------------------------------------------
             // | TAB |  Q  |  W  |  F  |  P  |  B  | ------ |  J   |  L   |  U   |  Y   |  ;   | BSPC     |
             // | ESC/` |  A  |  R  |  S  |  T  |  G  | ------ |  M   |  N   |  E   |  I   |  O   | ENTER    |
-            // | LSHIFT  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  <,  |  >.  |  ?/  |   SHIFT     |
-            //               | GUI |  SPC/LCTRL  | ALT/hyper | ------ | mo3  | to1 |  to2 |
+            // | LSHIFT  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  >.  | <, |  ?/  |   SHIFT     |
+            //               | GUI |  SPC/LCTRL  | CTRL/hyper | ------ | mo3  | to1 |  to2 |
             bindings = <
             &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &gresc       &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
-            &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp COMMA   &kp DOT   &kp FSLH   &sk RSHIFT
+            &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp DOT   &kp COMMA   &kp FSLH   &sk RSHIFT
                      &kp LGUI   &mt LCTRL SPACE    &mt LC(LS(LA(LGUI))) LCTRL           &mo 3   &mo1_to1   &enter_to2 
         >;
         };
