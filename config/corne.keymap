@@ -92,7 +92,7 @@
             &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
             &gresc       &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
             &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp DOT   &kp COMMA   &kp FSLH   &sk RSHIFT
-                     &kp LCTRL   &mt LGUI SPACE    &mt LC(LS(LA(LGUI))) LCTRL           &to 3   &mo1_to1   &enter_to2 
+                     &kp LCTRL   &hm SPACE LGUI    &hm LCTRL LC(LS(LA(LGUI))) LCTRL           &mo 3   &mo1_to1   &mo 2 
         >;
         };
         layer_one {
@@ -110,12 +110,12 @@
         };
         layer_two {
             // -----------------------------------------------------------------------------------------
-            // |        |        | UP    |        |  BRIGHT-  |  BRIGHT+  | ------ |  =  |  7  |  8  |  9  |  *  |          |
+            // |        |  PTAB  | UP    | NTAB   |  BRIGHT-  |  BRIGHT+  | ------ |  =  |  7  |  8  |  9  |  *  |          |
             // |        |  LEFT  | DOWN  | RIGHT  |  VOL-     |  VOL+     | ------ |  /  |  4  |  5  |  6  |  -  |          |
             // | BT_CLR | BT1    | BT2   | BT3    |  PLAY     |  MUTE     | ------ |  0  |  1  |  2  |  3  |  +  |    ^     |
             //                                           |     |    |    | ------ |     | to0 | to0 |
             bindings = <
-            &trans       &trans          &kp UP         &trans         &kp C_BRI_DN   &kp C_BRI_UP   	      &kp EQUAL   &kp N7   &kp N8   &kp N9   &kp KP_MULTIPLY   &trans
+            &trans       &kp LC(LS(TAB)  &kp UP         &kp RC(TAB)         &kp C_BRI_DN   &kp C_BRI_UP   	      &kp EQUAL   &kp N7   &kp N8   &kp N9   &kp KP_MULTIPLY   &trans
             &trans       &kp LEFT        &kp DOWN       &kp RIGHT      &kp C_VOL_DN   &kp C_VOL_UP    	    &kp FSLH    &kp N4   &kp N5   &kp N6   &kp MINUS         &trans
             &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &kp C_PP       &kp C_MUTE            &kp N0      &kp N1   &kp N2   &kp N3   &kp PLUS          &kp CARET
                                                         &trans         &trans         &trans  				      &trans      &to 0   &to 0
@@ -123,14 +123,15 @@
         };
         temp_layer {
             // -----------------------------------------------------------------------------------------
-            // |      |  1  |  2  |  3  |  4  |  5  | ------ |  6   |  7   |  8  |  9 |  0  |      |
-            // |      |  | UP |  |       |       | ------ |  H  |  J  |  K  |  L  |     |         |
-            // |      | LEFT     | DOWN     |    RIGHT   |       |       | ------ |     |     |     |     |     |         |
-            //                              |     |    |    | ------ |     |     |     |
+            // |      |  1    |  2     |  3    |  4  |  5  | ------ |  6   |  7  |  8  |  9  |  0  |         |
+            // |      |       | UP     |       |     |     | ------ |  H   |  J  |  K  |  L  |     |         |
+            // |      | LEFT  | DOWN   | RIGHT |     |     | ------ |      |     |     |     |     |         |
+            //                             |     |    |    | ------ |      |     |     |
             bindings = <
-            &trans     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5             &kp N6          &kp N7     &kp N8     &kp N9     &kp N0     &trans
-            &trans   &trans   &kp UP   &trans   &trans   &trans            &kp H    &kp J    &kp K    &kp L    &trans   &trans
-            &trans   &kp LEFT     &kp DOWN     &kp RIGHT      &trans   &trans            &trans   &trans   &trans   &trans   &trans   &to 0
+            &trans   &kp N1     &kp N2     &kp N3     &kp N4   &kp N5            &kp N6            &kp N7   &kp N8   &kp N9          &kp N0   &trans
+            &trans   &trans     &kp UP     &trans     &trans   &trans            &kp H             &kp J    &kp K    &kp L           &trans   &trans
+            &trans   &kp LEFT   &kp DOWN   &kp RIGHT  &trans   &trans            &td HOME PG_DN    &trans   &trans   &td END PG_UP   &trans   &trans
+            
                                            &trans      &trans   &trans  				  &to 0   &trans   &trans
         >;
         };
