@@ -115,7 +115,7 @@
             // | BT_CLR | BT1    | BT2   | BT3    |  PLAY     |  MUTE     | ------ |  0  |  1  |  2  |  3  |  +  |    ^     |
             //                                           |     |    |    | ------ |     | to0 | to0 |
             bindings = <
-            &trans       &kp LC(LS(TAB)  &kp UP         &kp RC(TAB)         &kp C_BRI_DN   &kp C_BRI_UP   	      &kp EQUAL   &kp N7   &kp N8   &kp N9   &kp KP_MULTIPLY   &trans
+            &trans       &kp LC(LS(TAB))  &kp UP         &kp RC(TAB)         &kp C_BRI_DN   &kp C_BRI_UP   	      &kp EQUAL   &kp N7   &kp N8   &kp N9   &kp KP_MULTIPLY   &trans
             &trans       &kp LEFT        &kp DOWN       &kp RIGHT      &kp C_VOL_DN   &kp C_VOL_UP    	    &kp FSLH    &kp N4   &kp N5   &kp N6   &kp MINUS         &trans
             &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &kp C_PP       &kp C_MUTE            &kp N0      &kp N1   &kp N2   &kp N3   &kp PLUS          &kp CARET
                                                         &trans         &trans         &trans  				      &trans      &to 0   &to 0
