@@ -92,7 +92,7 @@
             &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B                       &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &bspc_del
             &gresc            &kp A   &kp R   &kp S   &kp T   &kp G                       &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
             &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V                       &kp K   &kp H   &kp DOT   &kp COMMA   &kp FSLH   &sk RSHIFT
-                     &kp LCTRL   &mt LGUI SPACE    &mt LCTRL LC(LS(LA(LGUI)))             &mo 3   &mo1_to1   &mo 2 
+                     &kp LCTRL   &mt LGUI SPACE    &mt LC(LS(LA(LGUI))) LCTRL            &mo 3   &mo1_to1   &mo 2 
         >;
         };
         layer_one {
