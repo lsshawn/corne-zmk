@@ -89,10 +89,10 @@
             // | LSHIFT  |  Z  |  X  |  C  |  D  |  V  | ------ |  K   |  H   |  >.  | <, |  ?/  |   SHIFT     |
             //               | LCTRL |  SPC/LGUI  | CTRL/hyper | ------ | to3  | to1 |  to2 |
             bindings = <
-            &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B           &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
-            &gresc       &kp A   &kp R   &kp S   &kp T   &kp G           &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
-            &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V           &kp K   &kp H   &kp DOT   &kp COMMA   &kp FSLH   &sk RSHIFT
-                     &kp LCTRL   &hm SPACE LGUI    &hm LCTRL LC(LS(LA(LGUI))) LCTRL           &mo 3   &mo1_to1   &mo 2 
+            &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B                       &kp J   &kp L   &kp U       &kp Y     &kp SEMI   &kp BSPC
+            &gresc            &kp A   &kp R   &kp S   &kp T   &kp G                       &kp M   &kp N   &kp E       &kp I      &kp O      &kp ENTER
+            &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V                       &kp K   &kp H   &kp DOT   &kp COMMA   &kp FSLH   &sk RSHIFT
+                     &kp LCTRL   &hm SPACE LGUI    &hm LCTRL LC(LS(LA(LGUI)))             &mo 3   &mo1_to1   &mo 2 
         >;
         };
         layer_one {
@@ -128,9 +128,9 @@
             // |      | LEFT  | DOWN   | RIGHT |     |     | ------ |      |     |     |     |     |         |
             //                             |     |    |    | ------ |      |     |     |
             bindings = <
-            &trans   &kp N1     &kp N2     &kp N3     &kp N4   &kp N5            &kp N6            &kp N7   &kp N8   &kp N9          &kp N0   &trans
-            &trans   &trans     &kp UP     &trans     &trans   &trans            &kp H             &kp J    &kp K    &kp L           &trans   &trans
-            &trans   &kp LEFT   &kp DOWN   &kp RIGHT  &trans   &trans            &td HOME PG_DN    &trans   &trans   &td END PG_UP   &trans   &trans
+            &trans   &kp N1     &kp N2     &kp N3     &kp N4   &kp N5            &kp N6            &kp N7      &kp N8      &kp N9          &kp N0   &trans
+            &trans   &trans     &kp UP     &trans     &trans   &trans            &kp H             &kp J       &kp K       &kp L           &trans   &trans
+            &trans   &kp LEFT   &kp DOWN   &kp RIGHT  &trans   &trans            &td HOME PG_DN    &kp LC(D)   &kp LC(U)   &td END PG_UP   &trans   &trans
             
                                            &trans      &trans   &trans  				  &to 0   &trans   &trans
         >;
