@@ -34,39 +34,11 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        gresc: grave_escape {
-            compatible = "zmk,behavior-mod-morph";
-            label = "GRAVE_ESCAPE";
-            #binding-cells = <0>;
-            bindings = <&kp ESC>, <&kp GRAVE>;
-            mods = <(MOD_LGUI)>;
-        };
-        space_tab: space_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "space_tab";
-            #binding-cells = <0>;
-            bindings = <&kp SPC>, <&kp TAB>;
-            mods = <(MOD_LCTL)>;
-        };
-        dot_comma: dot_comma {
-            compatible = "zmk,behavior-mod-morph";
-            label = "dot_comma";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COMMA>;
-            mods = <(MOD_LSFT)>;
-        };
         bspc_del: bspc_del {
             compatible = "zmk,behavior-mod-morph";
             label = "dot_comma";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT)>;
-        };
-        enter_to2: enter_to2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "enter_to2";
-            #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&to 2>;
             mods = <(MOD_LGUI)>;
         };
         mo1_to1: mo1_to1 {
@@ -97,12 +69,12 @@
         };
         layer_one {
             // -----------------------------------------------------------------------------------------
-            // |  ~     |  !  |  @  |  #  |  $  |  %  | ------ |  ^   |  &   |  *  |  ;   |  :  |     |
-            // |  `     |  <  |  >  |  (  |  )  |  -  | ------ |  =   |  .   |  ,  |  '   |  \  |     |
+            // |  ~     |  !  |  @  |  #  |  $  |  %  | ------ |  ^   |  &   |  *  |  ;   |  =  |     |
+            // |  `     |  <  |  >  |  (  |  )  |  -  | ------ |      |  .   |  ,  |  '   |  \  |     |
             // |        |  [  |  ]  |  {  |  }  |  _  | ------ |  |   |  +   |  ?  |  "   |  /  |     |
             //                      |     |     |     | ------ |      |  to0 | to2 |
             bindings = <
-            &kp TILDE   &kp EXCL    &kp AT     &kp HASH   &kp DLLR   &kp PRCNT          &kp CARET      &kp AMPS    &kp STAR    &kp SEMI    &kp COLON   &trans
+            &kp TILDE   &kp EXCL    &kp AT     &kp HASH   &kp DLLR   &kp PRCNT          &kp CARET      &kp AMPS    &kp STAR    &kp SEMI    &kp EQUAL   &trans
             &kp GRAVE   &kp LT      &kp GT     &kp LPAR   &kp RPAR   &kp MINUS          &kp EQUAL      &kp DOT     &kp COMMA   &kp SQT     &kp FSLH    &trans
             &trans      &kp LBKT    &kp RBKT   &kp LBRC   &kp RBRC   &kp UNDER          &kp PIPE       &kp PLUS    &kp QMARK   &kp DQT     &kp BSLH    &trans
                                                &trans     &trans     &trans  				    &trans   &to 0     &enter_to2
