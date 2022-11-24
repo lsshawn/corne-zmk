@@ -77,7 +77,7 @@
             &kp TILDE   &kp EXCL    &kp AT     &kp HASH   &kp DLLR   &kp PRCNT          &kp CARET      &kp AMPS    &kp STAR    &kp SEMI    &kp EQUAL   &trans
             &kp GRAVE   &kp LT      &kp GT     &kp LPAR   &kp RPAR   &kp MINUS          &kp EQUAL      &kp DOT     &kp COMMA   &kp SQT     &kp FSLH    &trans
             &trans      &kp LBKT    &kp RBKT   &kp LBRC   &kp RBRC   &kp UNDER          &kp PIPE       &kp PLUS    &kp QMARK   &kp DQT     &kp BSLH    &trans
-                                               &trans     &trans     &trans  				    &trans   &to 0     &enter_to2
+                                               &trans     &trans     &trans  				    &trans   &to 0     &to 2
         >;
         };
         layer_two {
