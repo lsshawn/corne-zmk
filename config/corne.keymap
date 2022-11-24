@@ -48,6 +48,12 @@
             bindings = <&mo 1>, <&to 1>;
             mods = <(MOD_LGUI)>;
         };
+        mo3_to3: mo3_to3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "mo3_to3";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&to 3>;
+            mods = <(MOD_LGUI)>;
     };
 
 
@@ -64,7 +70,7 @@
             &kp TAB           &kp Q   &kp W   &kp F   &kp P   &kp B                     &kp J   &kp L      &kp U     &kp Y       &kp COLON   &bspc_del
             &kp ESC            &kp A   &kp R   &kp S   &kp T   &kp G                    &kp M   &kp N      &kp E     &kp I       &kp O       &kp ENTER
             &kp LSHIFT        &kp Z   &kp X   &kp C   &kp D   &kp V                     &kp K   &kp H      &kp DOT   &kp COMMA   &kp FSLH    &kp CAPS
-                 &mt LC(LS(LA(LGUI))) LALT   &mt LGUI SPACE    &kp LCTRL               &mo 3   &mo1_to1   &mo 2 
+                 &mt LC(LS(LA(LGUI))) LALT   &mt LGUI SPACE    &kp LCTRL                &mo3_to3   &mo1_to1   &mo 2 
         >;
         };
         layer_one {
