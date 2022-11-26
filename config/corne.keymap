@@ -77,7 +77,7 @@
             &none    &kp LBKT    &kp N7   &kp N8   &kp N9   &kp RBKT          &none   &none       &none       &none      &none     &none
             &none    &kp SEMI    &kp N4   &kp N5   &kp N6   &kp EQUAL         &none   &kp RSHIFT  &kp RCTRL   &kp RALT   &kp RGUI  &none
             &none    &kp GRAVE   &kp N1   &kp N2   &kp N3   &kp BSLH          &none   &none       &none       &none      &none     &none
-                                          &kp DOT  &kp NO   &kp MINUS  				&none   &none       &none
+                                          &kp DOT  &kp N0   &kp MINUS  				&none   &none       &none
         >;
         };
         sym_layer {
@@ -108,16 +108,15 @@
         };
         nav_layer {
             // -----------------------------------------------------------------------------------------
-            // |      |  1    |  2     |  3    |  4  |  5  | ------ |  6   |  7  |  8  |  9  |  0  |         |
-            // |      | PTAB  | UP     | NTAB  |     |     | ------ |  H   |  J  |  K  |  L  |     |         |
-            // |      | LEFT  | DOWN   | RIGHT |     |     | ------ |  PGDN/HOME  | LCTRL(D)    | LCTRL(U)    | PGUP/END    |     |         |
-            //                             |     |    |    | ------ |      |     |     |
+            // |      |        |     |      |         |     | ------ |  Redo   |  Paste  |  Copy  |  Cut  |  Undo  |         |
+            // |      | Super  | Alt | Ctrl |  Shift  |     | ------ |  L      |  D      |  U     |  R    |        |         |
+            // |      |        |     |      |         |     | ------ |  Ins    | Home    | PDN    | PGUP  |   END  |         |
+           //                               |     |    |    | ------ | ENTER   |  BSPC   |  DEL   |
             bindings = <
-            &trans   &kp N1              &kp N2     &kp N3         &kp N4   &kp N5            &kp N6            &kp N7      &kp N8      &kp N9          &kp N0   &trans
-            &trans   &kp LC(LS(TAB))     &kp UP     &kp RC(TAB)    &trans   &trans            &kp H             &kp J       &kp K       &kp L           &trans   &trans
-            &trans   &kp LEFT            &kp DOWN   &kp RIGHT      &trans   &trans            &td HOME PG_DN    &kp LC(D)   &kp LC(U)   &td END PG_UP   &trans   &trans
-            
-                                           &trans      &trans   &trans  				  &to 0   &trans   &trans
+               &none   &none       &none      &none      &none       &none           &kp K_REDO      &kp K_PASTE    &kp K_COPY   &kp K_CUT    &kp K_UNDO   &none
+               &none   &kp LGUI    &kp LALT   &kp LCTRL  &kp LSHIFT  &none           &kp LEFT        &kp DOWN       &kp UP       &kp RIGHT    &none        &none
+               &none   &none       &none      &none      &none       &none           &kp INS         &kp HOME       &kp PG_DN    &kp PG_UP   &kp END
+                                              &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
         >;
         };
         media_layer {
