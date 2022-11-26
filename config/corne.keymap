@@ -70,14 +70,14 @@
         num_layer {
             // -----------------------------------------------------------------------------------------
             // | xxx  |  [{ |  7  |  8  |  9  | ]}  | ------ |     |         |        |        |         |     |
-            // | xxx  |  ;: |  4  |  5  |  6  | =+  | ------ |     |  SHIFT  |  CTRL  |   ALT  |  SUPER  |     |
+            // | xxx  |  ;: |  4  |  5  |  6  | =+  | ------ |  H  | J/SHIFT | K/CTRL | L/ALT  |  SUPER  |     |
             // | xxx  |  `~ |  1  |  2  |  3  | \|  | ------ |     |         |        |        |         |     |
             //                    |  .> |  0) | -_  | ------ |     |         |        |
             bindings = <
-            &none    &kp LBKT    &kp N7   &kp N8   &kp N9   &kp RBKT          &none   &none       &none       &none      &none     &none
-            &none    &kp SEMI    &kp N4   &kp N5   &kp N6   &kp EQUAL         &none   &kp RSHIFT  &kp RCTRL   &kp RALT   &kp RGUI  &none
-            &none    &kp GRAVE   &kp N1   &kp N2   &kp N3   &kp BSLH          &none   &none       &none       &none      &none     &none
-                                          &kp DOT  &kp N0   &kp MINUS  				&none   &none       &none
+            &none    &kp LBKT    &kp N7   &kp N8   &kp N9   &kp RBKT          &none   &none         &none         &none        &none     &none
+            &none    &kp SEMI    &kp N4   &kp N5   &kp N6   &kp EQUAL         &kp H   &hm RSHIFT J  &hm RCTRL K   &hm RALT L   &kp RGUI  &none
+            &none    &kp GRAVE   &kp N1   &kp N2   &kp N3   &kp BSLH          &none   &none         &none         &none        &none     &none
+                                          &kp DOT  &kp N0   &kp MINUS  				&none   &none         &none
         >;
         };
         sym_layer {
@@ -121,16 +121,15 @@
         };
         media_layer {
             // -----------------------------------------------------------------------------------------
-            // |      |  1    |  2     |  3    |  4  |  5  | ------ |  6   |  7  |  8  |  9  |  0  |         |
-            // |      | PTAB  | UP     | NTAB  |     |     | ------ |  H   |  J  |  K  |  L  |     |         |
-            // |      | LEFT  | DOWN   | RIGHT |     |     | ------ |  PGDN/HOME  | LCTRL(D)    | LCTRL(U)    | PGUP/END    |     |         |
-            //                             |     |    |    | ------ |      |     |     |
+            // |      |        |     |      |         |     | ------ |         |           |        |         |       |         |
+            // |      | Super  | Alt | Ctrl |  Shift  |     | ------ |  REV    |  VOL_D    | VOL_U  |  FF     |       |         |
+            // |      |        |     |      |         |     | ------ |  BT_CLR |  BT0      | BT1    | BT2     |  BT3  |         |
+           //                               |     |    |    | ------ |  STOP   |  PLAY/PP  |  MUTE  |
             bindings = <
-            &trans   &kp N1              &kp N2     &kp N3         &kp N4   &kp N5            &kp N6            &kp N7      &kp N8      &kp N9          &kp N0   &trans
-            &trans   &kp LC(LS(TAB))     &kp UP     &kp RC(TAB)    &trans   &trans            &kp H             &kp J       &kp K       &kp L           &trans   &trans
-            &trans   &kp LEFT            &kp DOWN   &kp RIGHT      &trans   &trans            &td HOME PG_DN    &kp LC(D)   &kp LC(U)   &td END PG_UP   &trans   &trans
-            
-                                           &trans      &trans   &trans  				  &to 0   &trans   &trans
+               &none   &none       &none      &none      &none       &none           &none        &none          &none           &none         &none         &none
+               &none   &kp LGUI    &kp LALT   &kp LCTRL  &kp LSHIFT  &none           &kp C_RW     &kp VOL_DN     &kp VOL_UP      &kp C_FF      &none         &none
+               &none   &none       &none      &none      &none       &none           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3
+                                              &none      &none       &none  				 &kp C_STOP   &kp C_PP       &kp DEL
         >;
         };
     };
