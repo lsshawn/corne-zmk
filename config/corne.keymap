@@ -64,7 +64,7 @@
             &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &kp APOS     &none
             &none    &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O   &none
             &none    &kp Z        &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH     &none
-                                               &lt MEDIA ESC   &lt NAV SPACE   &mt LC(LS(LA(LGUI))) TAB    &lt SYM ENTER   &lt NUM BSPC   &lt FUN DEL
+                                               &lt Media ESC   &lt Nav SPACE   &mt LC(LS(LA(LGUI))) TAB    &lt Sym ENTER   &lt Num BSPC   &lt Fun DEL
         >;
         };
         num_layer {
