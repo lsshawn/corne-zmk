@@ -127,9 +127,9 @@
            //                               |     |    |    | ------ |  STOP   |  PLAY/PP  |  MUTE  |
             bindings = <
                &none   &none       &none      &none      &none       &none           &none        &none          &none           &none         &none         &none
-               &none   &kp LGUI    &kp LALT   &kp LCTRL  &kp LSHIFT  &none           &kp C_RW     &kp VOL_DN     &kp VOL_UP      &kp C_FF      &none         &none
+               &none   &kp LGUI    &kp LALT   &kp LCTRL  &kp LSHIFT  &none           &kp C_RW     &kp K_VOL_DN   &kp K_VOL_UP    &kp C_FF      &none         &none
                &none   &none       &none      &none      &none       &none           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3
-                                              &none      &none       &none  				 &kp C_STOP   &kp C_PP       &kp DEL
+                                              &none      &none       &none  				 &kp C_STOP   &kp C_PP       &kp K_MUTE
         >;
         };
     };
