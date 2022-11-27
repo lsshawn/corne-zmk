@@ -32,6 +32,15 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        hs: homerow_shifts {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_SHIFTS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
         td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
@@ -72,12 +81,12 @@
             // -----------------------------------------------------------------------------------------
             // | xxx  |  Q        |  W      |  F       |  P        |  B        | ------ |  J         |  L         |  U        |  Y       |  '" :      |   xxx    |
             // | xxx  |  A/Super  |  R/Alt  |  S/Ctrl  |  T/Shift  |  G        | ------ |  M         |  N/Shift   |  E/Ctrl   |  I/Alt   |  O/Super   |   xxx    |
-            // | xxx  |  Z        |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   xxx    |
+            // | xxx  |  Z/SHIFT  |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   xxx    |
             //                              |ESC/Media |  SPC/NAV  | TAB/HYPER | ------ | ENTER/NUM  | BSPC/SYM   |  DEL/FUN  |
             bindings = <
             &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &colon_quote   &none
             &kp CAPS &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O     &none
-            &none    &kp Z        &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &none
+            &none    &hs LSHIFT Z &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &none
                                                &lt Media ESC   &lt Nav SPACE   &mt LC(LS(LA(LGUI))) TAB    &lt Num ENTER   &lt Sym BSPC   &lt Fun DEL
         >;
         };
@@ -122,15 +131,15 @@
         };
         nav_layer {
             // -----------------------------------------------------------------------------------------
-            // |      |        |     |      |         |     | ------ |  Redo   |  Paste  |  Copy  |  Cut  |  Undo  |         |
-            // |      | Super  | Alt | Ctrl |  Shift  |     | ------ |  L      |  D      |  U     |  R    |        |         |
-            // |      |        |     |      |         |     | ------ |  Ins    | Home    | PDN    | PGUP  |   END  |         |
-           //                               |     |    |    | ------ | ENTER   |  BSPC   |  DEL   |
+            // |      | CUT  |  COPY  |  U   | PASTE   |     | ------ |  F5  |  PTAB   |  NTAB  | CTAB  |  UNDO CTAB  |         |
+            // |      | Super| L      | D    |  R      |     | ------ |  L      |  D      |  U     |  R    |             |         |
+            // |      | UNDO | REDO   |      |         |     | ------ |  Ins    | Home    | PDN    | PGUP  |   END       |         |
+           //                                  |     |    |    | ------ | ENTER   |  BSPC   |  DEL   |
             bindings = <
-               &none   &none       &none      &none      &none       &none           &kp K_REDO      &kp K_PASTE    &kp K_COPY   &kp K_CUT    &kp K_UNDO   &none
-               &none   &kp LGUI    &kp LALT   &kp LCTRL  &kp LSHIFT  &none           &kp LEFT        &kp DOWN       &kp UP       &kp RIGHT    &none        &none
-               &none   &none       &none      &none      &none       &none           &kp INS         &kp HOME       &kp PG_DN    &kp PG_UP   &kp END
-                                              &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
+               &none   &kp K_CUT      &kp K_COPY         &kp UP     &kp K_PASTE &none           &kp F5          &kp LC(LS(TAB)) &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))   &none
+               &none   &kp LGUI       &kp LEFT           &kp DOWN   &kp RIGHT   &none           &kp LEFT        &kp DOWN        &kp UP       &kp RIGHT    &none        &none
+               &none   &kp K_UNDO     &kp K_REDO         &none      &none       &none           &kp INS         &kp HOME        &kp PG_DN    &kp PG_UP   &kp END
+                                                      &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
         >;
         };
         media_layer {
