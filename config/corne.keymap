@@ -48,6 +48,20 @@
             bindings = <&mo 1>, <&to 1>;
             mods = <(MOD_LGUI)>;
         };
+        colon_quote: colon_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COLON_QUOTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COLON>, <&kp APOS>;
+        };
+        colon_quote: colon_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COLON_QUOTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COLON>, <&kp APOS>;
+        };
     };
 
 
@@ -56,15 +70,15 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // | xxx  |  Q        |  W      |  F       |  P        |  B        | ------ |  J         |  L         |  U        |  Y       |  '"        |   xxx    |
+            // | xxx  |  Q        |  W      |  F       |  P        |  B        | ------ |  J         |  L         |  U        |  Y       |  '" :      |   xxx    |
             // | xxx  |  A/Super  |  R/Alt  |  S/Ctrl  |  T/Shift  |  G        | ------ |  M         |  N/Shift   |  E/Ctrl   |  I/Alt   |  O/Super   |   xxx    |
-            // | xxx  |  Z        |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .<       |  ,>      |  /?        |   xxx    |
-            //                              |ESC/Media |  SPC/NAV  | TAB/HYPER | ------ | ENTER/SYM  | BSPC/NUM   |  DEL/FUN |
+            // | xxx  |  Z        |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   xxx    |
+            //                              |ESC/Media |  SPC/NAV  | TAB/HYPER | ------ | ENTER/NUM  | BSPC/SYM   |  DEL/FUN  |
             bindings = <
-            &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &kp APOS     &none
-            &none    &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O   &none
-            &none    &kp Z        &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH     &none
-                                               &lt Media ESC   &lt Nav SPACE   &mt LC(LS(LA(LGUI))) TAB    &lt Sym ENTER   &lt Num BSPC   &lt Fun DEL
+            &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &colon_quote   &none
+            &kp CAPS &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O     &none
+            &none    &kp Z        &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &none
+                                               &lt Media ESC   &lt Nav SPACE   &mt LC(LS(LA(LGUI))) TAB    &lt Num ENTER   &lt Sym BSPC   &lt Fun DEL
         >;
         };
         num_layer {
@@ -82,15 +96,15 @@
         };
         sym_layer {
             // -----------------------------------------------------------------------------------------
-            // | xxx  |  ` |  &  |  *  |  +  | (  | ------ |  )  |         |        |        |         |     |
+            // | xxx  |  ` |  &  |  *  |  +  | (  | ------ |  )  |         |        |        |    :    |     |
             // | xxx  |  ~ |  $  |  %  |  ^  | [  | ------ |  ]  |  SHIFT  |  CTRL  |   ALT  |  SUPER  |     |
-            // | xxx  |  | |  !  |  @  |  #  | {  | ------ |  }  |         |        |        |         |     |
-            //                   |  :  |  -  | _  | ------ |     |         |        |
+            // | xxx  |  | |  !  |  @  |  #  | {  | ------ |  }  |    \    |    .   |  ,     |    /?   |     |
+            //                   |  _  |  -  | <  | ------ |  >  |         |        |
             bindings = <
-            &none   &kp GRAVE   &kp AMPS   &kp STAR    &kp PLUS   &kp LPAR        &kp RPAR   &none       &none       &none      &none     &none
+            &none   &kp GRAVE   &kp AMPS   &kp STAR    &kp PLUS   &kp LPAR        &kp RPAR   &none       &none       &none      &kp COLON &none
             &none   &kp TILDE   &kp DLLR   &kp PRCNT   &kp CARET  &kp LBKT        &kp RBKT   &kp RSHIFT  &kp RCTRL   &kp RALT   &kp RGUI  &none
-            &none   &kp PIPE    &kp EXCL   &kp AT      &kp HASH   &kp LBRC        &kp RBRC   &none       &none       &none      &none     &none
-                                           &kp COLON   &kp MINUS  &kp UNDER  	    &none   &none       &none
+            &none   &kp PIPE    &kp EXCL   &kp AT      &kp HASH   &kp LBRC        &kp RBRC   &none       &kp DOT   &kp COMMA    &kp FSLH  &none
+                                           &kp UNDER   &kp MINUS  &kp LT  	      &kp GT     &none       &none
         >;
         };
         fun_layer {
