@@ -175,8 +175,8 @@
             // |    |   |  |   |   |     | ------ |  F5            |  PTAB     |  NTAB | CTAB        |  UNDO CTAB       |         |
            //            |     |    |    | ------ |                |           |       |
             bindings = <
-               &none   &none   &none   &none    &none   &none           &mvh SCROLL_UP        &mkp LCLK          &mmv MOVE_UP           &mkp RCLK         &mvh SCROLL_LEFT         &none
-               &none   &none   &none   &none    &none   &none           &mvh SCROLL_DOWN      &mmv MOVE_LEFT     &mmv MOVE_DOWN         &mmv MOVE_RIGHT   &mvh SCROLL_RIGHT        &none
+               &none   &none   &none   &none    &none   &none           &mwh SCROLL_UP        &mkp LCLK          &mmv MOVE_UP           &mkp RCLK         &mwh SCROLL_LEFT         &none
+               &none   &none   &none   &none    &none   &none           &mwh SCROLL_DOWN      &mmv MOVE_LEFT     &mmv MOVE_DOWN         &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT        &none
                &none   &none   &none   &none    &none   &none           &kp F5                &kp LC(LS(TAB))    &kp RC(TAB)            &kp LC(W)         &kp LC(LS(T))            &to Base
                                  &none      &none       &none  				 &none   &none   &none
         >;
