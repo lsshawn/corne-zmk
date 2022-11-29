@@ -153,7 +153,7 @@
                                                       &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
         >;
         };
-        media_layer 
+        media_layer {
             label = "Media";
             // -----------------------------------------------------------------------------------------
             // |      |        |     |      |         |     | ------ |         |           |        |         |       |         |
@@ -167,7 +167,7 @@
                                               &none      &none       &none  				 &kp C_STOP   &kp C_PP       &kp K_MUTE
         >;
         };
-        mouse_layer
+        mouse_layer {
             // -----------------------------------------------------------------------------------------
           label = "Mouse";
             // |    |   |  |   |   |     | ------ |   Scroll up    |  LCLICK   |    U  |    RCLICK   |  Scroll left     |         |
