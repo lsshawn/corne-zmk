@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -62,7 +62,7 @@
             label = "COLON_QUOTE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp COLON>, <&kp APOS>;
+            bindings = <&kp APOS>, <&kp COLON>;
         };
         colon_quote: colon_quote {
             compatible = "zmk,behavior-tap-dance";
@@ -83,12 +83,12 @@
             // | xxx  |  Q        |  W      |  F       |  P        |  B        | ------ |  J         |  L         |  U        |  Y       |  '" :      |   xxx    |
             // | xxx  |  A/Super  |  R/Alt  |  S/Ctrl  |  T/Shift  |  G        | ------ |  M         |  N/Shift   |  E/Ctrl   |  I/Alt   |  O/Super   |   xxx    |
             // | xxx  |  Z/SHIFT  |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   xxx    |
-            //                              |ESC/Media |  SPC/NAV  | TAB/HYPER | ------ | ENTER/NUM  | BSPC/SYM   |  DEL/FUN  |
+            //                              |ESC/Media |  SPC/NAV  | TAB/SHIFT | ------ | ENTER/NUM  | BSPC/SYM   |  DEL/FUN  |
             bindings = <
             &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &colon_quote   &none
             &kp CAPS &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O     &none
             &none    &hs LSHIFT Z &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &none
-                                               &lt Media ESC   &lt Nav SPACE   &mt LC(LS(LA(LGUI))) TAB    &lt Num ENTER   &lt Sym BSPC   &lt Fun DEL
+                                               &lt Media ESC   &lt Nav SPACE   &hs LSHIFT TAB              &lt Num ENTER   &lt Sym BSPC   &lt Fun DEL
         >;
         };
         num_layer {
