@@ -64,13 +64,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp APOS>, <&kp COLON>;
         };
-        colon_quote: colon_quote {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COLON_QUOTE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp COLON>, <&kp APOS>;
-        };
     };
 
 
