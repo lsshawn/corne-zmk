@@ -26,10 +26,6 @@
     quick_tap_ms = <150>;
 };
 
-&mmv {
-    time-to-max-speed-ms = <50>;
-};
-
 / {
     behaviors {
         hm: homerow_mods {
@@ -159,14 +155,14 @@
         nav_layer {
             label = "Nav";
             // -----------------------------------------------------------------------------------------
-            // |      | CUT  |  COPY  |  U   | PASTE   |     | ------ |  F5  |  PTAB   |  NTAB  | CTAB  |  UNDO CTAB  |         |
-            // |      | Super| L      | D    |  R      |     | ------ |  L      |  D      |  U     |  R    |             |         |
-            // |      | UNDO | REDO   |      |         |     | ------ |  Ins    | Home    | PDN    | PGUP  |   END       |         |
+            // |      | CUT  |  COPY  |  U   | PASTE   | UNDO     | ------ |  F5  |  PTAB   |  NTAB  | CTAB  |  UNDO CTAB  |         |
+            // |      | Super| L      | D    |  R      | REDO     | ------ |  L      |  D      |  U     |  R    |             |         |
+            // |      | F5 | PTAB   | NTAB      | CTAB         | UNDO CTAB    | ------ | Home    | PDN    | PGUP  |   END       |         |    | 
            //                                  |     |    |    | ------ | ENTER   |  BSPC   |  DEL   |
             bindings = <
-               &none   &kp K_CUT      &kp K_COPY         &kp UP     &kp K_PASTE &none           &kp F5          &kp LC(LS(TAB)) &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))   &none
-               &none   &kp LGUI       &kp LEFT           &kp DOWN   &kp RIGHT   &none           &kp LEFT        &kp DOWN        &kp UP       &kp RIGHT    &none        &none
-               &none   &kp K_UNDO     &kp K_REDO         &none      &none       &none           &kp INS         &kp HOME        &kp PG_DN    &kp PG_UP   &kp END
+               &none   &kp K_CUT      &kp K_COPY         &kp UP       &kp K_PASTE &kp K_UNDO           &kp F5          &kp LC(LS(TAB)) &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))   &none
+               &none   &kp LGUI       &kp LEFT           &kp DOWN     &kp RIGHT   &kp K_REDO           &kp LEFT        &kp DOWN        &kp UP       &kp RIGHT    &none        &none
+               &none   &kp F5         &kp LC(LS(TAB))    &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))      &kp HOME        &kp PG_DN    &kp PG_UP   &kp END   &kp INS  &none
                                                       &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
         >;
         };
