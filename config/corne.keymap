@@ -30,10 +30,6 @@
     time-to-max-speed-ms = <50>;
 };
 
-&mwh {
-    acceleration-exponent=<1>;
-};
-
 / {
     behaviors {
         hm: homerow_mods {
@@ -77,6 +73,27 @@
             tapping-term-ms = <200>;
             bindings = <&kp APOS>, <&kp COLON>;
         };
+        par_td: par_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PAR_TD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+        bkt_td: bkt_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BKT_TD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+        };
+        brc_td: brc_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BRC_TD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+        };
     };
 
 
@@ -114,15 +131,15 @@
         sym_layer {
             label = "Sym";
             // -----------------------------------------------------------------------------------------
-            // | xxx  |  ` |  &  |  *  |  +  | (  | ------ |  )  |    <    |    '   |   "    |    :    |     |
-            // | xxx  |  ~ |  $  |  %  |  ^  | [  | ------ |  ]  |    =    |    ?   |   \    |    ;    |     |
-            // | xxx  |  | |  !  |  @  |  #  | {  | ------ |  }  |    >    |    .   |  ,     |    /?   |     |
+            // | xxx  |  ` |  &  |  *  |  +  | ()  | ------ |    |    <    |    '   |   "    |    :    |     |
+            // | xxx  |  ~ |  $  |  %  |  ^  | []  | ------ |    |    =    |    ?   |   \    |    ;    |     |
+            // | xxx  |  | |  !  |  @  |  #  | {}  | ------ |    |    >    |    .   |  ,     |    /?   |     |
             //                   |     |  -  | _  | ------ |     |         |        |
             bindings = <
-            &none   &kp GRAVE   &kp AMPS   &kp STAR    &kp PLUS   &kp LPAR        &kp RPAR   &kp LT      &kp SQT     &kp DQT      &kp COLON &none
-            &none   &kp TILDE   &kp DLLR   &kp PRCNT   &kp CARET  &kp LBKT        &kp RBKT   &kp EQUAL   &kp QMARK   &kp BSLH     &kp SEMI  &none
-            &none   &kp PIPE    &kp EXCL   &kp AT      &kp HASH   &kp LBRC        &kp RBRC   &kp GT      &kp DOT     &kp COMMA    &kp FSLH  &none
-                                           &none       &kp MINUS  &kp UNDER  	    &none      &none       &none
+            &none   &kp GRAVE   &kp AMPS   &kp STAR    &kp PLUS   &par_td        &none   &kp LT      &kp SQT     &kp DQT      &kp COLON &none
+            &none   &kp TILDE   &kp DLLR   &kp PRCNT   &kp CARET  &bkt_td        &none   &kp EQUAL   &kp QMARK   &kp BSLH     &kp SEMI  &none
+            &none   &kp PIPE    &kp EXCL   &kp AT      &kp HASH   &brc_td        &none   &kp GT      &kp DOT     &kp COMMA    &kp FSLH  &none
+                                           &none       &kp MINUS  &kp UNDER  	   &none      &none       &none
         >;
         };
         fun_layer {
