@@ -15,6 +15,7 @@
 #define Fun 3
 #define Nav 4
 #define Media 5
+#define Mouse 6
 
 &mt {
     flavor = "tap-preferred";
@@ -23,6 +24,14 @@
 
 &lt {
     quick_tap_ms = <150>;
+};
+
+&mmv {
+    time-to-max-speed-ms = <50>;
+};
+
+&mwh {
+    acceleration-exponent=<1>;
 };
 
 / {
@@ -79,12 +88,12 @@
             // -----------------------------------------------------------------------------------------
             // | xxx  |  Q        |  W      |  F       |  P        |  B        | ------ |  J         |  L         |  U        |  Y       |  '" :      |   xxx    |
             // | xxx  |  A/Super  |  R/Alt  |  S/Ctrl  |  T/Shift  |  G        | ------ |  M         |  N/Shift   |  E/Ctrl   |  I/Alt   |  O/Super   |   xxx    |
-            // | xxx  |  Z/SHIFT  |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   xxx    |
+            // | xxx  |  Z/SHIFT  |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   Mouse  |
             //                              |ESC/Media |  SPC/NAV  | TAB/SHIFT | ------ | ENTER/NUM  | BSPC/SYM   |  DEL/FUN  |
             bindings = <
             &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &colon_quote   &none
             &kp CAPS &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O     &none
-            &none    &hs LSHIFT Z &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &none
+            &none    &hs LSHIFT Z &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &to Mouse
                                                &lt Media ESC   &lt Nav SPACE   &hs LSHIFT TAB              &lt Num ENTER   &lt Sym BSPC   &lt Fun DEL
         >;
         };
@@ -144,7 +153,7 @@
                                                       &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
         >;
         };
-        media_layer {
+        media_layer 
             label = "Media";
             // -----------------------------------------------------------------------------------------
             // |      |        |     |      |         |     | ------ |         |           |        |         |       |         |
@@ -152,10 +161,24 @@
             // |      |        |     |      |         |     | ------ |  BT_CLR |  BT0      | BT1    | BT2     |  BT3  |         |
            //                               |     |    |    | ------ |  STOP   |  PLAY/PP  |  MUTE  |
             bindings = <
-               &none   &none       &mmv MOVE_UP      &none      &none       &none           &none        &none          &none           &none         &none         &none
+               &none   &none       &mmv MOVE_UP       &none      &none       &none           &none        &none          &none           &none         &none         &none
                &none   &sk LGUI    &sk LALT   &sk LCTRL  &sk LSHIFT  &none           &kp C_RW     &kp K_VOL_DN   &kp K_VOL_UP    &kp C_FF      &none         &none
                &none   &none       &none      &none      &none       &none           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3
                                               &none      &none       &none  				 &kp C_STOP   &kp C_PP       &kp K_MUTE
+        >;
+        };
+        mouse_layer
+            // -----------------------------------------------------------------------------------------
+          label = "Mouse";
+            // |    |   |  |   |   |     | ------ |   Scroll up    |  LCLICK   |    U  |    RCLICK   |  Scroll left     |         |
+            // |    |   |  |   |   |     | ------ |   Scroll down  |  L        |    D  |    R        |  Scroll right    |         |
+            // |    |   |  |   |   |     | ------ |  F5            |  PTAB     |  NTAB | CTAB        |  UNDO CTAB       |         |
+           //            |     |    |    | ------ |                |           |       |
+            bindings = <
+               &none   &none   &none   &none    &none   &none           &mvh SCROLL_UP        &mkp LCLK          &mmv MOVE_UP           &mkp RCLK         &mvh SCROLL_LEFT         &none
+               &none   &none   &none   &none    &none   &none           &mvh SCROLL_DOWN      &mmv MOVE_LEFT     &mmv MOVE_DOWN         &mmv MOVE_RIGHT   &mvh SCROLL_RIGHT        &none
+               &none   &none   &none   &none    &none   &none           &kp F5                &kp LC(LS(TAB))    &kp RC(TAB)            &kp LC(W)         &kp LC(LS(T))            &to Base
+                                 &none      &none       &none  				 &none   &none   &none
         >;
         };
     };
