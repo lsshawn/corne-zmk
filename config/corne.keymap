@@ -157,12 +157,12 @@
             // -----------------------------------------------------------------------------------------
             // |      | CUT  |  COPY  |  U   | PASTE   | UNDO     | ------ |  F5  |  PTAB   |  NTAB  | CTAB  |  UNDO CTAB  |         |
             // |      | Super| L      | D    |  R      | REDO     | ------ |  L      |  D      |  U     |  R    |             |         |
-            // |      | F5 | PTAB   | NTAB      | CTAB         | UNDO CTAB    | ------ | Home    | PDN    | PGUP  |   END       |         |    | 
+            // |  prsc    | F5 | CTAB     | PTAB   | NTAB  | UNDO CTAB    | ------ | Home    | PDN    | PGUP  |   END       |         |    | 
            //                                  |     |    |    | ------ | ENTER   |  BSPC   |  DEL   |
             bindings = <
                &none   &kp K_CUT      &kp K_COPY         &kp UP       &kp K_PASTE &kp K_UNDO           &kp F5          &kp LC(LS(TAB)) &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))   &none
                &none   &kp LGUI       &kp LEFT           &kp DOWN     &kp RIGHT   &kp K_REDO           &kp LEFT        &kp DOWN        &kp UP       &kp RIGHT    &none        &none
-               &none   &kp F5         &kp LC(LS(TAB))    &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))      &kp HOME        &kp PG_DN    &kp PG_UP   &kp END   &kp INS  &none
+               &kp LG(PRSC)   &kp F5         &kp LC(W)      &kp LC(LS(TAB))    &kp RC(TAB)    &kp LC(LS(T))      &kp HOME        &kp PG_DN    &kp PG_UP   &kp END   &kp INS  &none
                                                       &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
         >;
         };
