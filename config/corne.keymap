@@ -11,11 +11,8 @@
 
 #define Base 0
 #define Num 1
-#define Sym 2
-#define Fun 3
-#define Nav 4
-#define Media 5
-#define Mouse 6
+#define Nav 2
+#define Media 3
 
 &mt {
     flavor = "tap-preferred";
@@ -27,6 +24,44 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_ent {
+            timeout-ms = <50>;
+	          key-positions = <32 33>;
+            bindings = <&kp RET>;
+        };
+        combo_del {
+            timeout-ms = <50>;
+	          key-positions = <41, 42>;
+            bindings = <&kp DEL>;
+        };
+        combo_tobase {
+            timeout-ms = <50>;
+	          key-positions = <39, 40>;
+            bindings = <&to Base>;
+        };
+        combo_toNav {
+            timeout-ms = <50>;
+	          key-positions = <37, 38>;
+            bindings = <&to Nav>;
+        };
+        combo_dqt {
+            timeout-ms = <50>;
+	          key-positions = <10, 11>;
+            bindings = <&kp DQT>;
+        };
+        combo_qmark {
+            timeout-ms = <50>;
+	          key-positions = <33, 34>;
+            bindings = <&kp QMARK>;
+        };
+        combo_excl {
+            timeout-ms = <50>;
+	          key-positions = <32, 33>;
+            bindings = <&kp EXCL>;
+        };
+    };
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -90,6 +125,48 @@
             tapping-term-ms = <200>;
             bindings = <&kp LBRC>, <&kp RBRC>;
         };
+        lt_gt: lt_gt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "lt_gt";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LT>, <&kp GT>;
+        };
+        fslh_bslh: fslh_bslh {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FSLH_BSLH";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+        };
+        minus_under: minus_under {
+            compatible = "zmk,behavior-tap-dance";
+            label = "minus_under";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
+        };
+        equal_plus: equal_plus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "equal_plus";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp EQUAL>, <&kp PLUS>;
+        };
+        grave_tilde: grave_tilde {
+            compatible = "zmk,behavior-tap-dance";
+            label = "grave_tilde";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp GRAVE>, <&kp TILDE>;
+        };
+        dllr_prcnt: dllr_prcnt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "dllr_prcnt";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DLLR>, <&kp PRCNT>;
+        };
     };
 
 
@@ -98,100 +175,38 @@
 
         default_layer {
           label = "Base";
-            // -----------------------------------------------------------------------------------------
-            // | xxx  |  Q        |  W      |  F       |  P        |  B        | ------ |  J         |  L         |  U        |  Y       |  '" :      |   xxx    |
-            // | xxx  |  A/Super  |  R/Alt  |  S/Ctrl  |  T/Shift  |  G        | ------ |  M         |  N/Shift   |  E/Ctrl   |  I/Alt   |  O/Super   |   xxx    |
-            // | xxx  |  Z/SHIFT  |  X      |  C       |  D        |  V        | ------ |  K         |  H         |  .        |  ,       |  /?        |   Mouse  |
-            //                              |ESC/Media |  SPC/NAV  | TAB/SHIFT | ------ | ENTER/NUM  | BSPC/SYM   |  DEL/FUN  |
             bindings = <
-            &none    &kp Q        &kp W        &kp F           &kp P           &kp B                       &kp J           &kp L          &kp U         &kp Y        &colon_quote   &none
-            &kp CAPS &hm LGUI A   &hm LALT R   &hm LCTRL S     &hm LSHIFT T    &kp G                       &kp M           &hm RSHIFT N   &hm RCTRL E   &hm RALT I   &hm RGUI O     &none
-            &none    &hs LSHIFT Z &kp X        &kp C           &kp D           &kp V                       &kp K           &kp H          &kp DOT       &kp COMMA    &kp FSLH       &to Mouse
-                                               &lt Media ESC   &lt Nav SPACE   &hs LSHIFT TAB              &lt Num ENTER   &lt Sym BSPC   &lt Fun DEL
+            &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L     &kp U     &kp Y        &colon_quote   &none
+            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N     &kp E     &kp I        &kp O          &to Num
+            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H     &kp DOT   &kp COMMA    &fslh_bslh     &none
+                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &kp LCTRL  &mo Num   &kp BSPC
         >;
         };
         num_layer {
             label = "Num";
-            // -----------------------------------------------------------------------------------------
-            // | xxx  |  / |  7  |  8  |  9  | -  | ------ |     |         |        |        |         |     |
-            // | xxx  |  * |  4  |  5  |  6  | +  | ------ |  H  | J/SHIFT | K/CTRL | L/ALT  |  SUPER  |     |
-            // | xxx  |  ^ |  1  |  2  |  3  | =  | ------ |     |         |        |        |         |     |
-            //                    |  0 |  . | ENTER   | ------ |     |         |        |
             bindings = <
-            &none    &kp FSLH    &kp N7   &kp N8   &kp N9   &kp MINUR          &none   &none         &none         &none        &none     &none
-            &none    &kp STAR    &kp N4   &kp N5   &kp N6   &kp PLUS         &kp H   &hm RSHIFT J  &hm RCTRL K   &hm RALT L   &kp RGUI  &none
-            &none    &kp CARET   &kp N1   &kp N2   &kp N3   &kp EQUAL          &none   &none         &none         &none        &none     &none
-                                          &kp DOT  &kp DOT   &kp ENTER  				&none   &none         &none
-        >;
-        };
-        sym_layer {
-            label = "Sym";
-            // -----------------------------------------------------------------------------------------
-            // | xxx  |  ` |  &  |  *  |  +  | ()  | ------ |    |    <    |    '   |   "    |    :    |     |
-            // | xxx  |  ~ |  $  |  %  |  ^  | []  | ------ |    |    =    |    ?   |   \    |    ;    |     |
-            // | xxx  |  | |  !  |  @  |  #  | {}  | ------ |    |    >    |    .   |  ,     |    /?   |     |
-            //                   |     |  -  | _  | ------ |     |         |        |
-            bindings = <
-            &none   &kp GRAVE   &kp AMPS   &kp STAR    &kp PLUS   &par_td        &none   &kp LT      &kp SQT     &kp DQT      &kp COLON &none
-            &none   &kp TILDE   &kp DLLR   &kp PRCNT   &kp CARET  &bkt_td        &none   &kp EQUAL   &kp QMARK   &kp BSLH     &kp SEMI  &none
-            &none   &kp PIPE    &kp EXCL   &kp AT      &kp HASH   &brc_td        &none   &kp GT      &kp DOT     &kp COMMA    &kp FSLH  &none
-                                           &none       &kp MINUS  &kp UNDER  	   &none      &none       &none
-        >;
-        };
-        fun_layer {
-            label = "Func";
-            // -----------------------------------------------------------------------------------------
-            // |       | F12   | F7  | F8  | F9  | PRSC  | ------ |    |         |        |        |         |
-            // |       | F11   | F4  | F5  | F6  | SLCK  | ------ |    |  SHIFT  |  CTRL  |   ALT  |  SUPER  |
-            // |       | F10   | F1  | F2  | F3  | PBRK  | ------ |    |         |        |        |         |
-            //                 |  MENU  |  SPACE  | TAB  | ------ |    |         |        |
-            bindings = <
-            &none    &kp F12    &kp F7   &kp F8       &kp F9      &kp PSCRN         &none   &none       &none       &none      &none     &none
-            &none    &kp F11    &kp F4   &kp F5       &kp F6      &kp SLCK          &none   &kp RSHIFT  &kp RCTRL   &kp RALT   &kp RGUI  &none
-            &none    &kp F10    &kp F1   &kp F2       &kp F3      &kp PAUSE_BREAK   &none   &none       &none       &none      &none     &none
-                                         &kp K_CMENU  &kp SPACE   &kp TAB  		      &none   &none       &none
+            &trans   &grave_tilde  &td F7 N7   &td F8 N8   &td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
+            &trans   &kp STAR      &td F4 N4   &td F5 N5   &td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &kp L         &kp AMPS         &to Nav
+            &trans   &kp PIPE      &td F1 N1   &td F2 N2   &td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &trans
+                                               &kp N0      &trans      &trans  		    	&trans      &trans     &trans
         >;
         };
         nav_layer {
             label = "Nav";
-            // -----------------------------------------------------------------------------------------
-            // |      | CUT  |  COPY  |  U   | PASTE   | UNDO     | ------ |  F5  |  PTAB   |  NTAB  | CTAB  |  UNDO CTAB  |         |
-            // |      | Super| L      | D    |  R      | REDO     | ------ |  L      |  D      |  U     |  R    |             |         |
-            // |  prsc    | F5 | CTAB     | PTAB   | NTAB  | UNDO CTAB    | ------ | Home    | PDN    | PGUP  |   END       |         |    | 
-           //                                  |     |    |    | ------ | ENTER   |  BSPC   |  DEL   |
             bindings = <
-               &none   &kp K_CUT      &kp K_COPY         &kp UP       &kp K_PASTE &kp K_UNDO           &kp F5          &kp LC(LS(TAB)) &kp RC(TAB)   &kp LC(W)    &kp LC(LS(T))   &none
-               &none   &kp LGUI       &kp LEFT           &kp DOWN     &kp RIGHT   &kp K_REDO           &kp LEFT        &kp DOWN        &kp UP       &kp RIGHT    &none        &none
-               &kp LG(PRSC)   &kp F5         &kp LC(W)      &kp LC(LS(TAB))    &kp RC(TAB)    &kp LC(LS(T))      &kp HOME        &kp PG_DN    &kp PG_UP   &kp END   &kp INS  &none
-                                                      &none      &none       &none  				 &kp ENTER       &kp BSPC       &kp DEL
+            &trans         &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &none
+            &trans         &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &none
+            &kp LG(PRSC)   &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &none
+                                                   &trans           &trans        &trans             &trans              &trans           &trans
         >;
         };
         media_layer {
             label = "Media";
-            // -----------------------------------------------------------------------------------------
-            // |      |        |     |      |         |     | ------ |         |           |        |         |       |         |
-            // |      | Super  | Alt | Ctrl |  Shift  |     | ------ |  REV    |  VOL_D    | VOL_U  |  FF     |       |         |
-            // |      |        |     |      |         |     | ------ |  BT_CLR |  BT0      | BT1    | BT2     |  BT3  |         |
-           //                               |     |    |    | ------ |  STOP   |  PLAY/PP  |  MUTE  |
             bindings = <
-               &none   &none       &mmv MOVE_UP       &none      &none       &none           &none        &none          &none           &none         &none         &none
-               &none   &sk LGUI    &sk LALT   &sk LCTRL  &sk LSHIFT  &none           &kp C_RW     &kp K_VOL_DN   &kp K_VOL_UP    &kp C_FF      &none         &none
-               &none   &none       &none      &none      &none       &none           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3
-                                              &none      &none       &none  				 &kp C_STOP   &kp C_PP       &kp K_MUTE
-        >;
-        };
-        mouse_layer {
-            // -----------------------------------------------------------------------------------------
-          label = "Mouse";
-            // |    |   |  |   |   |     | ------ |   Scroll up    |  LCLICK   |    U  |    RCLICK   |  Scroll left     |         |
-            // |    |   |  |   |   |     | ------ |   Scroll down  |  L        |    D  |    R        |  Scroll right    |         |
-            // |    |   |  |   |   |     | ------ |  F5            |  PTAB     |  NTAB | CTAB        |  UNDO CTAB       |         |
-           //            |     |    |    | ------ |                |           |       |
-            bindings = <
-               &none   &none   &none   &none    &none   &none           &mwh SCROLL_UP        &mkp LCLK          &mmv MOVE_UP           &mkp RCLK         &mwh SCROLL_LEFT         &none
-               &none   &none   &none   &none    &none   &none           &mwh SCROLL_DOWN      &mmv MOVE_LEFT     &mmv MOVE_DOWN         &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT        &none
-               &none   &none   &none   &none    &none   &none           &kp F5                &kp LC(LS(TAB))    &kp RC(TAB)            &kp LC(W)         &kp LC(LS(T))            &to Base
-                                 &none      &none       &none  				 &none   &none   &none
+            &trans   &kp LG(Q)   &kp K_MUTE &kp K_VOL_DN   &kp K_VOL_UP    &none           &none         &none         &none   &none         &none         &none
+            &trans   &sk LGUI    &sk LALT   &sk LCTRL      &sk LSHIFT      &kp LG(F)           &none         &none         &none   &none         &none         &none
+            &trans   &kp LG(Z)   &kp LG(X)  &kp LG(C)      &kp LG(D)       &kp LG(V)       &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3 &none
+                                           &trans          &trans          &trans          &trans      &trans       &trans
         >;
         };
     };
