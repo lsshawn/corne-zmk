@@ -113,15 +113,15 @@
         num_layer {
             label = "Num";
             // -----------------------------------------------------------------------------------------
-            // | xxx  |  [{ |  7  |  8  |  9  | ]}  | ------ |     |         |        |        |         |     |
-            // | xxx  |  ;: |  4  |  5  |  6  | =+  | ------ |  H  | J/SHIFT | K/CTRL | L/ALT  |  SUPER  |     |
-            // | xxx  |  `~ |  1  |  2  |  3  | \|  | ------ |     |         |        |        |         |     |
-            //                    |  .> |  0) | -_  | ------ |     |         |        |
+            // | xxx  |  / |  7  |  8  |  9  | -  | ------ |     |         |        |        |         |     |
+            // | xxx  |  * |  4  |  5  |  6  | +  | ------ |  H  | J/SHIFT | K/CTRL | L/ALT  |  SUPER  |     |
+            // | xxx  |  ^ |  1  |  2  |  3  | =  | ------ |     |         |        |        |         |     |
+            //                    |  0 |  . | ENTER   | ------ |     |         |        |
             bindings = <
-            &none    &kp LBKT    &kp N7   &kp N8   &kp N9   &kp RBKT          &none   &none         &none         &none        &none     &none
-            &none    &kp SEMI    &kp N4   &kp N5   &kp N6   &kp EQUAL         &kp H   &hm RSHIFT J  &hm RCTRL K   &hm RALT L   &kp RGUI  &none
-            &none    &kp GRAVE   &kp N1   &kp N2   &kp N3   &kp BSLH          &none   &none         &none         &none        &none     &none
-                                          &kp DOT  &kp N0   &kp MINUS  				&none   &none         &none
+            &none    &kp FSLH    &kp N7   &kp N8   &kp N9   &kp MINUR          &none   &none         &none         &none        &none     &none
+            &none    &kp STAR    &kp N4   &kp N5   &kp N6   &kp PLUS         &kp H   &hm RSHIFT J  &hm RCTRL K   &hm RALT L   &kp RGUI  &none
+            &none    &kp CARET   &kp N1   &kp N2   &kp N3   &kp EQUAL          &none   &none         &none         &none        &none     &none
+                                          &kp DOT  &kp DOT   &kp ENTER  				&none   &none         &none
         >;
         };
         sym_layer {
