@@ -210,9 +210,9 @@
             label = "Num";
             bindings = <
             &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &kp L         &kp AMPS         &to Nav
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &hm RALT L         &hm LGUI AMPS         &to Nav
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Base
-                                                  &kp N0         &trans         &trans  		    &trans       &trans     &trans
+                                                  &kp N0         &trans         &trans  		    &kp LCTRL       &trans     &trans
         >;
         };
         nav_layer {
@@ -228,7 +228,7 @@
             label = "Media";
             bindings = <
             &trans   &kp LG(Q)   &kp K_MUTE &kp K_VOL_DN   &kp K_VOL_UP    &none           &none         &none         &none   &none         &none         &none
-            &trans   &sk LGUI    &sk LALT   &sk LCTRL      &sk LSHIFT      &kp LG(F)           &none         &none         &none   &none         &none         &none
+            &trans   &sk LGUI    &sk LALT   &sk LCTRL      &sk LSHIFT      &kp LG(F)       &none         &sk RSHIFT         &sk RCTRL   &sk RALT         &sk RGUI         &none
             &trans   &kp LG(Z)   &kp LG(X)  &kp LG(C)      &kp LG(D)       &kp LG(V)       &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3 &to Base
                                            &trans          &trans          &trans          &trans      &trans       &trans
         >;
