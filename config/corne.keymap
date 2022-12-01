@@ -28,38 +28,43 @@
         compatible = "zmk,combos";
         combo_ent {
             timeout-ms = <50>;
-	          key-positions = <32 33>;
+	          key-positions = <31 32>;
             bindings = <&kp RET>;
         };
         combo_del {
             timeout-ms = <50>;
-	          key-positions = <41 42>;
+	          key-positions = <40 41>;
             bindings = <&kp DEL>;
         };
         combo_tobase {
             timeout-ms = <50>;
-	          key-positions = <39 40>;
+	          key-positions = <38 39>;
             bindings = <&to Base>;
         };
         combo_toNav {
             timeout-ms = <50>;
-	          key-positions = <37 38>;
+	          key-positions = <36 37>;
             bindings = <&to Nav>;
         };
         combo_dqt {
             timeout-ms = <50>;
-	          key-positions = <10 11>;
+	          key-positions = <9 10>;
             bindings = <&kp DQT>;
         };
         combo_qmark {
             timeout-ms = <50>;
-	          key-positions = <33 34>;
+	          key-positions = <32 33>;
             bindings = <&kp QMARK>;
         };
         combo_excl {
             timeout-ms = <50>;
-	          key-positions = <32 33>;
+	          key-positions = <31 32>;
             bindings = <&kp EXCL>;
+        };
+        combo_esc {
+            timeout-ms = <50>;
+	          key-positions = <27 28>;
+            bindings = <&kp ESC>;
         };
     };
     behaviors {
@@ -85,7 +90,16 @@
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        fn: tn_tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPDANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -185,10 +199,10 @@
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &grave_tilde  &td F7 N7   &td F8 N8   &td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
-            &trans   &kp STAR      &td F4 N4   &td F5 N5   &td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &kp L         &kp AMPS         &to Nav
-            &trans   &kp PIPE      &td F1 N1   &td F2 N2   &td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Base
-                                               &kp N0      &trans      &trans  		    	&trans      &trans     &trans
+            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &kp L         &kp AMPS         &to Nav
+            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Base
+                                                  &kp N0         &trans         &trans  		    &trans       &trans     &trans
         >;
         };
         nav_layer {
@@ -210,4 +224,4 @@
         >;
         };
     };
-};
+200
