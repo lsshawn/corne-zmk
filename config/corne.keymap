@@ -68,7 +68,7 @@
         };
         combo_esc {
             timeout-ms = <20>;
-	          key-positions = <27 28>;
+	          key-positions = <36 37>;
             bindings = <&kp ESC>;
         };
         combo_esc_homerow {
@@ -200,28 +200,28 @@
         default_layer {
           label = "Base";
             bindings = <
-            &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L     &kp U     &kp Y        &colon_quote   &to Nav
-            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N     &kp E     &kp I        &hm LGUI O     &to Num
-            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H     &kp DOT   &kp COMMA    &fslh_bslh     &to Media
-                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &mo Num  &kp LCTRL   &kp RET
+            &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L     &kp U       &kp Y        &colon_quote   &to Nav
+            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N     &kp E       &kp I        &hm LGUI O     &to Num
+            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H     &kp COMMA   &kp DOT      &fslh_bslh     &to Media
+                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &mo Num    &kp RET   &kp LCTRL
         >;
         };
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &trans
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &hm RALT L         &hm LGUI AMPS         &trans
-            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &trans
+            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under    &kp AT          &par_td    &bkt_td    &brc_td       &trans           &trans
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus     &kp H             &kp J      &kp K      &hm RALT L         &hm LGUI AMPS         &trans
+            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET       &dllr_prcnt      &kp HASH   &trans     &trans        &trans           &trans
                                                   &kp N0         &trans         &trans  		    &kp LCTRL       &trans     &trans
         >;
         };
         nav_layer {
             label = "Nav";
             bindings = <
-            &trans         &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans         &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &kp PRSC       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
-                                                   &trans           &trans        &trans             &trans              &trans           &trans
+            &trans       &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans       &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
+                                                   &kp PRSC           &trans        &trans             &trans              &trans           &trans
         >;
         };
         media_layer {
