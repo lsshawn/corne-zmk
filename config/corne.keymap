@@ -28,8 +28,13 @@
         compatible = "zmk,combos";
         combo_ent {
             timeout-ms = <50>;
-	          key-positions = <31 32>;
+	          key-positions = <19 20>;
             bindings = <&kp RET>;
+        };
+        combo_bspc {
+            timeout-ms = <50>;
+	          key-positions = <31 32>;
+            bindings = <&kp BSPC>;
         };
         combo_del {
             timeout-ms = <50>;
@@ -58,7 +63,7 @@
         };
         combo_excl {
             timeout-ms = <50>;
-	          key-positions = <31 32>;
+	          key-positions = <32 33 34>;
             bindings = <&kp EXCL>;
         };
         combo_esc {
@@ -191,9 +196,9 @@
           label = "Base";
             bindings = <
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L     &kp U     &kp Y        &colon_quote   &none
-            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N     &kp E     &kp I        &kp O          &to Num
+            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N     &kp E     &kp I        &hm LGUI O     &to Num
             &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H     &kp DOT   &kp COMMA    &fslh_bslh     &none
-                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &kp LCTRL  &mo Num   &kp BSPC
+                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &kp LCTRL  &kp BSPC  &mo Num
         >;
         };
         num_layer {
