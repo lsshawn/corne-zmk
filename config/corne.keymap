@@ -220,7 +220,7 @@
             bindings = <
             &trans         &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &none
             &trans         &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &none
-            &kp LG(PRSC)   &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &to Base
+            &kp PRSC       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &to Base
                                                    &trans           &trans        &trans             &trans              &trans           &trans
         >;
         };
