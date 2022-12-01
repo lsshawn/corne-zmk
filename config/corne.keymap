@@ -95,7 +95,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        fn_tapdance: fn_tapdance {
+        fn_td: fn_td {
             compatible = "zmk,behavior-hold-tap";
             label = "FN_TAPDANCE";
             #binding-cells = <2>;
