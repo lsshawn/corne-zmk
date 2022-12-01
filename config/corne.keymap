@@ -33,32 +33,32 @@
         };
         combo_del {
             timeout-ms = <50>;
-	          key-positions = <41, 42>;
+	          key-positions = <41 42>;
             bindings = <&kp DEL>;
         };
         combo_tobase {
             timeout-ms = <50>;
-	          key-positions = <39, 40>;
+	          key-positions = <39 40>;
             bindings = <&to Base>;
         };
         combo_toNav {
             timeout-ms = <50>;
-	          key-positions = <37, 38>;
+	          key-positions = <37 38>;
             bindings = <&to Nav>;
         };
         combo_dqt {
             timeout-ms = <50>;
-	          key-positions = <10, 11>;
+	          key-positions = <10 11>;
             bindings = <&kp DQT>;
         };
         combo_qmark {
             timeout-ms = <50>;
-	          key-positions = <33, 34>;
+	          key-positions = <33 34>;
             bindings = <&kp QMARK>;
         };
         combo_excl {
             timeout-ms = <50>;
-	          key-positions = <32, 33>;
+	          key-positions = <32 33>;
             bindings = <&kp EXCL>;
         };
     };
