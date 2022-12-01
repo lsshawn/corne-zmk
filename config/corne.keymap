@@ -95,15 +95,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        fn_td: fn_td {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FN_TAPDANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
         mo1_to1: mo1_to1 {
             compatible = "zmk,behavior-mod-morph";
             label = "mo1_to1";
