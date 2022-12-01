@@ -48,7 +48,7 @@
         };
         combo_toNav {
             timeout-ms = <50>;
-	          20-positions = <36 37>;
+	          key-positions = <36 37>;
             bindings = <&to Nav>;
         };
         combo_dqt {
@@ -57,7 +57,7 @@
             bindings = <&kp DQT>;
         };
         combo_excl {
-            timeout-ms = <50>;
+            timeout-ms = <20>;
 	          key-positions = <32 33 34>;
             bindings = <&kp EXCL>;
         };
