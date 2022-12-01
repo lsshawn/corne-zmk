@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -199,9 +199,9 @@
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &kp L         &kp AMPS         &to Nav
-            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Base
+            &trans   &grave_tilde  &td F7 N7   &td F8 N8   &td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
+            &trans   &kp STAR      &td F4 N4   &td F5 N5   &td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &kp L         &kp AMPS         &to Nav
+            &trans   &kp PIPE      &td F1 N1   &td F2 N2   &td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Base
                                                   &kp N0         &trans         &trans  		    &trans       &trans     &trans
         >;
         };
