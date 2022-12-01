@@ -125,7 +125,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "COLON_QUOTE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp APOS>, <&kp COLON>;
         };
         par_td: par_td {
@@ -160,7 +160,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "FSLH_BSLH";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp FSLH>, <&kp BSLH>;
         };
         minus_under: minus_under {
@@ -210,8 +210,8 @@
             label = "Num";
             bindings = <
             &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under     &kp CARET   &par_td    &bkt_td    &brc_td       &trans           &none
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &hm RALT L         &hm LGUI AMPS         &to Nav
-            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Base
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus      &kp H       &kp J      &kp K      &hm RALT L         &hm LGUI AMPS         &to Base
+            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &dllr_prcnt      &kp AT      &kp HASH   &trans     &trans        &trans           &to Nav
                                                   &kp N0         &trans         &trans  		    &kp LCTRL       &trans     &trans
         >;
         };
@@ -219,8 +219,8 @@
             label = "Nav";
             bindings = <
             &trans         &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &none
-            &trans         &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &none
-            &kp PRSC       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &to Base
+            &trans         &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &to Base
+            &kp PRSC       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &none
                                                    &trans           &trans        &trans             &trans              &trans           &trans
         >;
         };
