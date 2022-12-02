@@ -27,12 +27,12 @@
     combos {
         compatible = "zmk,combos";
         combo_ent {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 	          key-positions = <19 20>;
             bindings = <&kp RET>;
         };
         combo_bspc {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 	          key-positions = <31 32>;
             bindings = <&kp BSPC>;
         };
@@ -57,22 +57,22 @@
             bindings = <&kp DQT>;
         };
         combo_excl {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 	          key-positions = <32 34>;
             bindings = <&kp EXCL>;
         };
         combo_qmark {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 	          key-positions = <32 33>;
             bindings = <&kp QMARK>;
         };
         combo_esc {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 	          key-positions = <36 37>;
             bindings = <&kp ESC>;
         };
         combo_esc_homerow {
-            timeout-ms = <20>;
+            timeout-ms = <30>;
 	          key-positions = <15 16>;
             bindings = <&kp ESC>;
         };
