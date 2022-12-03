@@ -58,7 +58,7 @@
         };
         combo_excl {
             timeout-ms = <30>;
-	          key-positions = <32 34>;
+	          key-positions = <31 33>;
             bindings = <&kp EXCL>;
         };
         combo_qmark {
@@ -66,14 +66,15 @@
 	          key-positions = <32 33>;
             bindings = <&kp QMARK>;
         };
-        combo_esc {
-            timeout-ms = <30>;
-	          key-positions = <36 37>;
-            bindings = <&kp ESC>;
+        combo_prcnt {
+            timeout-ms = <40>;
+	          key-positions = <30 31>;
+            layers = <1>;
+            bindings = <&kp PRCNT>;
         };
-        combo_esc_homerow {
-            timeout-ms = <30>;
-	          key-positions = <15 16>;
+        combo_esc {
+            timeout-ms = <40>;
+	          key-positions = <27 28>;
             bindings = <&kp ESC>;
         };
     };
@@ -146,7 +147,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BRC_TD";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             bindings = <&kp LBRC>, <&kp RBRC>;
         };
         lt_gt: lt_gt {
@@ -184,12 +185,12 @@
             tapping-term-ms = <200>;
             bindings = <&kp GRAVE>, <&kp TILDE>;
         };
-        dllr_prcnt: dllr_prcnt {
+        at_amps: at_amps {
             compatible = "zmk,behavior-tap-dance";
-            label = "dllr_prcnt";
+            label = "at_amps";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DLLR>, <&kp PRCNT>;
+            bindings = <&kp AT>, <&kp AMPS>;
         };
     };
 
@@ -209,28 +210,28 @@
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under    &kp AT          &par_td    &bkt_td    &brc_td       &trans           &trans
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus     &kp H             &kp J      &kp K      &hm RALT L         &hm LGUI AMPS         &trans
-            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET       &dllr_prcnt      &kp HASH   &trans     &trans        &trans           &trans
-                                                  &kp N0         &trans         &trans  		    &kp LCTRL       &trans     &trans
+            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under          &at_amps    &par_td    &bkt_td    &brc_td       &trans           &trans
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus           &kp H       &kp J      &kp K      &hm RALT L    &hm LGUI SEMI    &trans
+            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
+                                                  &kp N0         &trans         &trans                &none       &trans     &trans
         >;
         };
         nav_layer {
             label = "Nav";
             bindings = <
-            &trans       &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans       &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO         &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))      &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
-                                                   &kp PRSC           &trans        &trans             &trans              &trans           &trans
+            &trans       &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO             &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans       &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO             &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))          &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
+                                                 &kp PRSC         &trans        &trans                 &trans              &trans           &trans
         >;
         };
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &kp LG(Q)   &kp K_MUTE &kp K_VOL_DN   &kp K_VOL_UP    &none           &none         &none         &none   &none         &none         &trans
-            &trans   &sk LGUI    &sk LALT   &sk LCTRL      &sk LSHIFT      &kp LG(F)       &none         &sk RSHIFT         &sk RCTRL   &sk RALT         &sk RGUI         &trans
-            &trans   &kp LG(Z)   &kp LG(X)  &kp LG(C)      &kp LG(D)       &kp LG(V)       &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3 &trans
-                                           &trans          &trans          &trans          &trans      &trans       &trans
+            &trans   &kp TAB     &kp LS(TAB)  &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE               &none        &none          &none           &none         &none         &trans
+            &trans   &sk LGUI    &sk LALT     &sk LCTRL      &sk LSHIFT      &kp LG(F)           &none        &sk RSHIFT     &sk RCTRL       &sk RALT      &sk RGUI      &trans
+            &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
+                                              &trans         &trans          &trans              &trans       &trans         &trans
         >;
         };
     };
