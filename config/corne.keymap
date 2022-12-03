@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+  Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -48,7 +48,7 @@
         };
         combo_excl {
             timeout-ms = <30>;
-	          key-positions = <30 32>;
+	          key-positions = <31 33>;
             bindings = <&kp EXCL>;
         };
         combo_qmark {
