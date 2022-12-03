@@ -28,18 +28,8 @@
         compatible = "zmk,combos";
         combo_ent {
             timeout-ms = <30>;
-	          key-positions = <19 20>;
-            bindings = <&kp RET>;
-        };
-        combo_bspc {
-            timeout-ms = <30>;
 	          key-positions = <31 32>;
-            bindings = <&kp BSPC>;
-        };
-        combo_del {
-            timeout-ms = <50>;
-	          key-positions = <40 41>;
-            bindings = <&kp DEL>;
+            bindings = <&kp RET>;
         };
         combo_tobase {
             timeout-ms = <50>;
@@ -58,7 +48,7 @@
         };
         combo_excl {
             timeout-ms = <30>;
-	          key-positions = <31 33>;
+	          key-positions = <30 32>;
             bindings = <&kp EXCL>;
         };
         combo_qmark {
@@ -192,6 +182,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp AT>, <&kp AMPS>;
         };
+        bspc_del: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "bspc_del";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_RGUI)>;
+        };
     };
 
 
@@ -201,10 +198,10 @@
         default_layer {
           label = "Base";
             bindings = <
-            &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L     &kp U       &kp Y        &colon_quote   &to Nav
-            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N     &kp E       &kp I        &hm LGUI O     &to Num
-            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H     &kp COMMA   &kp DOT      &fslh_bslh     &to Media
-                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &mo Num    &kp RET   &kp LCTRL
+            &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
+            &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N       &kp E       &kp I        &hm RGUI O     &to Num
+            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &fslh_bslh     &to Media
+                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &mo Num    &bspc_del   &kp LCTRL
         >;
         };
         num_layer {
@@ -228,7 +225,7 @@
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &kp TAB     &kp LS(TAB)  &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE               &none        &none          &none           &none         &none         &trans
+            &trans   &kp TAB     &kp LS(TAB)  &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &none        &none          &none           &none         &none         &trans
             &trans   &sk LGUI    &sk LALT     &sk LCTRL      &sk LSHIFT      &kp LG(F)           &none        &sk RSHIFT     &sk RCTRL       &sk RALT      &sk RGUI      &trans
             &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
                                               &trans         &trans          &trans              &trans       &trans         &trans
