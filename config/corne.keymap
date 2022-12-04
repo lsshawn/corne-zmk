@@ -27,8 +27,13 @@
     combos {
         compatible = "zmk,combos";
         combo_ent {
-            timeout-ms = <30>;
+            timeout-ms = <40>;
 	          key-positions = <31 32>;
+            bindings = <&kp RET>;
+        };
+        combo_ent {
+            timeout-ms = <40>;
+	          key-positions = <3 4>;
             bindings = <&kp RET>;
         };
         combo_tobase {
@@ -201,7 +206,7 @@
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
             &kp ESC    &kp A   &kp R   &kp S    &kp T    &kp G                 &kp M      &kp N       &kp E       &kp I        &hm RGUI O     &to Num
             &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &fslh_bslh     &to Media
-                       &mo Media   &lt Nav SPACE   &kp LSHIFT                  &mo Num    &bspc_del   &kp LCTRL
+                       &mo Nav   &lt Media SPACE   &sk LSHIFT                  &mo Num    &bspc_del   &kp LCTRL
         >;
         };
         num_layer {
@@ -216,17 +221,17 @@
         nav_layer {
             label = "Nav";
             bindings = <
-            &trans       &kp K_CUT   &kp K_COPY  &kp UP           &kp K_PASTE   &kp K_UNDO             &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans       &kp LGUI    &kp LEFT    &kp DOWN         &kp RIGHT     &kp K_REDO             &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans       &kp F5      &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))          &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
-                                                 &kp PRSC         &trans        &trans                 &trans              &trans           &trans
+            &trans       &kp TAB   &kp LS(TAB) &kp K_COPY       &kp K_PASTE   &kp K_UNDO           &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans       &kp F5    &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))        &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
+                                                 &kp PRSC         &trans        &trans               &trans              &trans           &trans
         >;
         };
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &kp TAB     &kp LS(TAB)  &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &none        &none          &none           &none         &none         &trans
-            &trans   &sk LGUI    &sk LALT     &sk LCTRL      &sk LSHIFT      &kp LG(F)           &none        &sk RSHIFT     &sk RCTRL       &sk RALT      &sk RGUI      &trans
+            &trans   &none       &none        &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &none        &none          &none           &none         &none         &trans
+            &trans   &none       &none        &none          &none           &kp LG(F)           &kp LEFT        &kp DOWN     &kp UP       &kp RIGHT      &sk RGUI      &trans
             &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
                                               &trans         &trans          &trans              &trans       &trans         &trans
         >;
