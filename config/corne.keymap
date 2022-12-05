@@ -251,7 +251,7 @@
             &trans       &kp TAB   &kp LS(TAB) &kp K_COPY       &kp K_PASTE   &kp K_UNDO           &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
             &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
             &trans       &kp F5    &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))        &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
-                                                 &kp PRSC         &trans        &trans               &trans              &trans           &trans
+                                                 &trans         &kp PRSC        &trans               &trans              &trans           &trans
         >;
         };
         media_layer {
