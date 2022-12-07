@@ -99,6 +99,21 @@
 	          key-positions = <27 28>;
             bindings = <&kp ESC>;
         };
+        combo_under {
+            timeout-ms = <40>;
+	          key-positions = <4 5>;
+            bindings = <&kp UNDER>;
+        };
+        combo_plus {
+            timeout-ms = <40>;
+	          key-positions = <16 17>;
+            bindings = <&kp PLUS>;
+        };
+        combo_capsword {
+            timeout-ms = <40>;
+	          key-positions = <13 22>;
+            bindings = <&caps_word>;
+        };
     };
     behaviors {
         hm: homerow_mods {
@@ -186,20 +201,6 @@
             tapping-term-ms = <300>;
             bindings = <&kp FSLH>, <&kp BSLH>;
         };
-        minus_under: minus_under {
-            compatible = "zmk,behavior-tap-dance";
-            label = "minus_under";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp MINUS>, <&kp UNDER>;
-        };
-        equal_plus: equal_plus {
-            compatible = "zmk,behavior-tap-dance";
-            label = "equal_plus";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp EQUAL>, <&kp PLUS>;
-        };
         grave_tilde: grave_tilde {
             compatible = "zmk,behavior-tap-dance";
             label = "grave_tilde";
@@ -239,8 +240,8 @@
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &minus_under          &at_amps    &par_td    &bkt_td    &brc_td       &trans           &trans
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &equal_plus           &kp H       &kp J      &kp K      &hm RALT L    &hm LGUI SEMI    &trans
+            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp MINUS             &at_amps    &par_td    &bkt_td    &brc_td       &trans           &trans
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp EQUAL             &kp H       &kp J      &kp K      &hm RALT L    &hm LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
                                                   &kp N0         &trans         &trans                &none       &trans     &trans
         >;
