@@ -58,6 +58,13 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     hold-trigger-on-release;            // requires PR #1423
 )
 
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: num layer
+ZMK_BEHAVIOR(bs_del_media, mod_morph,
+    bindings = <&lt Media BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    keep-mods = <MOD_LSFT>;  // requires PR #1412
+)
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -223,13 +230,6 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             tapping-term-ms = <200>;
             bindings = <&kp AT>, <&kp AMPS>;
         };
-        bspc_del: bspc_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "bspc_del";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_RGUI)>;
-        };
     };
 
 
@@ -242,7 +242,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
             &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &to Num
             &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &fslh_bslh     &to Media
-                       &mo Nav   &lt Media SPACE   &sk LSHIFT                  &mo Num    &bspc_del   &kp LCTRL
+                       &mo Nav   &lt Media SPACE   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
         >;
         };
         num_layer {
