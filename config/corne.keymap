@@ -1,10 +1,11 @@
-#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
+
 #include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
 
 #define Base 0
 #define Num 1
