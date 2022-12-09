@@ -109,11 +109,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
 	          key-positions = <36 37>;
             bindings = <&to Nav>;
         };
-        combo_dqt {
-            timeout-ms = <50>;
-	          key-positions = <9 10>;
-            bindings = <&kp DQT>;
-        };
         combo_excl {
             timeout-ms = <30>;
 	          key-positions = <31 33>;
@@ -123,12 +118,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
             timeout-ms = <30>;
 	          key-positions = <32 33>;
             bindings = <&kp QMARK>;
-        };
-        combo_prcnt {
-            timeout-ms = <40>;
-	          key-positions = <30 31>;
-            layers = <1>;
-            bindings = <&kp PRCNT>;
         };
         combo_under {
             timeout-ms = <40>;
@@ -282,8 +271,8 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &none       &none        &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   &none       &none        &none          &none           &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &none       NAV_UP       &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans   NAV_LEFT    NAV_DOWN     NAV_DOWN          &none           &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
             &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
                                               &trans         &trans          &trans              &trans       &trans         &trans
         >;
