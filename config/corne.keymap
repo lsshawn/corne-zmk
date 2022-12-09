@@ -87,54 +87,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
 )
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        combo_ent_l {
-            timeout-ms = <40>;
-	          key-positions = <31 32>;
-            bindings = <&kp RET>;
-        };
-        combo_ent_r {
-            timeout-ms = <40>;
-	          key-positions = <3 4>;
-            bindings = <&kp RET>;
-        };
-        combo_tobase {
-            timeout-ms = <50>;
-	          key-positions = <38 39>;
-            bindings = <&to Base>;
-        };
-        combo_toNav {
-            timeout-ms = <50>;
-	          key-positions = <36 37>;
-            bindings = <&to Nav>;
-        };
-        combo_excl {
-            timeout-ms = <30>;
-	          key-positions = <31 33>;
-            bindings = <&kp EXCL>;
-        };
-        combo_qmark {
-            timeout-ms = <30>;
-	          key-positions = <32 33>;
-            bindings = <&kp QMARK>;
-        };
-        combo_under {
-            timeout-ms = <40>;
-	          key-positions = <4 5>;
-            bindings = <&kp UNDER>;
-        };
-        combo_plus {
-            timeout-ms = <40>;
-	          key-positions = <16 17>;
-            bindings = <&kp PLUS>;
-        };
-        combo_capsword {
-            timeout-ms = <40>;
-	          key-positions = <13 22>;
-            bindings = <&caps_word>;
-        };
-    };
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -214,13 +166,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
             tapping-term-ms = <200>;
             bindings = <&kp LT>, <&kp GT>;
         };
-        fslh_bslh: fslh_bslh {
-            compatible = "zmk,behavior-tap-dance";
-            label = "FSLH_BSLH";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp FSLH>, <&kp BSLH>;
-        };
         grave_tilde: grave_tilde {
             compatible = "zmk,behavior-tap-dance";
             label = "grave_tilde";
@@ -246,7 +191,7 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
             bindings = <
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
             &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &to Num
-            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &fslh_bslh     &to Media
+            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH     &to Media
                        &mo Nav   &lt Media SPACE   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
         >;
         };
