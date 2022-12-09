@@ -78,6 +78,12 @@ ZMK_BEHAVIOR(ss_cw, mod_morph,
     mods = <(MOD_LSFT)>;
 )
 
+// tap: copy | double-tap: cut
+ZMK_BEHAVIOR(copy_cut, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LC(INS)>, <&kp LC(X)>;
+)
+
 // tap: num-word | double-tap: sticky fun-layer | hold: num-layer
 ZMK_BEHAVIOR(num_fun_dance, tap_dance,
     tapping-term-ms = <200>;
@@ -90,12 +96,7 @@ ZMK_BEHAVIOR(num_layer_word, hold_tap,
     bindings = <&mo>, <&num_fun_dance>;
 )
 #define NUM_WORD &num_layer_word NUM 0
-#
-// tap: copy | double-tap: cut
-ZMK_BEHAVIOR(copy_cut, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&kp LC(INS)>, <&kp LC(X)>;
-)
+
 
 / {
     combos {
