@@ -96,19 +96,11 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
 
-// tap: num-word | double-tap: sticky fun-layer | hold: num-layer
-ZMK_BEHAVIOR(num_fun_dance, tap_dance,
+// tap: num-word | hold: num-layer
+ZMK_BEHAVIOR(num_td, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&num_word>, <&sl FN>;
+    bindings = <&num_word>, <&mo Num>;
 )
-ZMK_BEHAVIOR(num_layer_word, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&num_fun_dance>;
-)
-#define NUM_WORD &num_layer_word NUM 0
-
 
 / {
     combos {
@@ -287,7 +279,7 @@ ZMK_BEHAVIOR(num_layer_word, hold_tap,
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
             &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &to Num
             &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &fslh_bslh     &to Media
-                       &mo Nav   &lt Media SPACE   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
+                       &mo Nav   &lt Media SPACE   &sk LSHIFT                  &num_td    &bs_del_media   &kp LCTRL
         >;
         };
         num_layer {
