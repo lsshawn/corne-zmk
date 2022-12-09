@@ -130,11 +130,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
             layers = <1>;
             bindings = <&kp PRCNT>;
         };
-        combo_esc {
-            timeout-ms = <40>;
-	          key-positions = <27 28>;
-            bindings = <&kp ESC>;
-        };
         combo_under {
             timeout-ms = <40>;
 	          key-positions = <4 5>;
