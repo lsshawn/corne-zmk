@@ -28,6 +28,13 @@
     hold-trigger-key-positions = <0>;  // tap on interrupt
 };
 
+#define NAV_LEFT  &mt HOME     LEFT    // tap: left  | long-tap: beginning of line
+#define NAV_RIGHT &mt END      RIGHT   // tap: right | long-tap: end       of line
+#define NAV_UP    &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
+#define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+#define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+#define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+
 &lt {
     quick_tap_ms = <150>;
 };
@@ -63,6 +70,31 @@ ZMK_BEHAVIOR(bs_del_media, mod_morph,
     bindings = <&lt Media BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <MOD_LSFT>;  // requires PR #1412
+)
+
+// tap: sticky-shift | lshft + tap: caps-word | hold: shift
+ZMK_BEHAVIOR(ss_cw, mod_morph,
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+
+// tap: num-word | double-tap: sticky fun-layer | hold: num-layer
+ZMK_BEHAVIOR(num_fun_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&num_word>, <&sl FN>;
+)
+ZMK_BEHAVIOR(num_layer_word, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&num_fun_dance>;
+)
+#define NUM_WORD &num_layer_word NUM 0
+#
+// tap: copy | double-tap: cut
+ZMK_BEHAVIOR(copy_cut, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
 
 / {
@@ -249,7 +281,7 @@ ZMK_BEHAVIOR(bs_del_media, mod_morph,
             label = "Num";
             bindings = <
             &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp MINUS             &at_amps    &par_td    &bkt_td    &brc_td       &trans           &trans
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp EQUAL             &kp H       &kp J      &kp K      &hm RALT L    &hm LGUI SEMI    &trans
+            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp EQUAL             &kp H       &kp J      &kp K      &hmr RALT L    &hm LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
                                                   &kp N0         &trans         &trans                &none       &trans     &trans
         >;
@@ -257,8 +289,8 @@ ZMK_BEHAVIOR(bs_del_media, mod_morph,
         nav_layer {
             label = "Nav";
             bindings = <
-            &trans       &kp TAB   &kp LS(TAB) &kp K_COPY       &kp K_PASTE   &kp K_UNDO           &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans       &kp TAB   &kp LS(TAB) &copy_cut       &kp LS(INS)   &kp K_UNDO            &none      NAV_BSPC    NAV_DEL  &none  &none  &none 
+            &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP   NAV_RIGHT   &none   &none
             &trans       &kp F5    &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))        &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
                                                  &trans         &kp PRSC        &trans               &trans              &trans           &trans
         >;
@@ -266,8 +298,8 @@ ZMK_BEHAVIOR(bs_del_media, mod_morph,
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &none       &none        &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &none        &none          &none           &none         &none         &trans
-            &trans   &none       &none        &none          &none           &kp LG(F)           &kp LEFT        &kp DOWN     &kp UP       &kp RIGHT      &sk RGUI      &trans
+            &trans   &none       &none        &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans   &none       &none        &none          &none           &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
             &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
                                               &trans         &trans          &trans              &trans       &trans         &trans
         >;
