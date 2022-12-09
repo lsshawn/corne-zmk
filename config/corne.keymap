@@ -21,6 +21,10 @@
     quick-release;             // no double capitalization when rolling keys
 };
 
+&sl {  // sticky-layer config
+    ignore-modifiers;
+};
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <220>;
@@ -37,6 +41,14 @@
 
 &lt {
     quick_tap_ms = <150>;
+};
+
+&caps_word {  // mods deactivate caps-word, requires PR #1441
+    /delete-property/ ignore-modifiers;
+};
+
+&num_word {  // num-word, requires PR #1441
+    layers = <NUM>;
 };
 
 /* Homerow mods */
