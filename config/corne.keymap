@@ -48,7 +48,7 @@
 };
 
 &num_word {  // num-word, requires PR #1441
-    layers = <NUM>;
+    layers = <Num>;
 };
 
 /* Homerow mods */
