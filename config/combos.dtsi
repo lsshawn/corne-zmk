@@ -2,7 +2,7 @@
 #undef COMBO_HOOK
 #define COMBO_HOOK global-quick-tap-ms = <75>;
 
-#define COMBO_TERM_FAST 20
+#define COMBO_TERM_FAST 25
 #define COMBO_TERM_SLOW 35
 
 ZMK_COMBO_ADV(rightEnter, &kp RET, RM1 RM2, ALL, COMBO_TERM_FAST)
@@ -24,4 +24,4 @@ ZMK_COMBO_ADV(paste, &kp LC(LS(V)),   LB2 LB1,     ALL, COMBO_TERM_SLOW)
 ZMK_COMBO_ADV(tobase, &to Base, LH0 RH0, ALL, COMBO_TERM_SLOW)
 ZMK_COMBO_ADV(capsword, &caps_word, LM4 RM4, Base Num, COMBO_TERM_SLOW)
 
-// ZMK_COMBO_ADV(mute, &kp K_VOL_MUTE, LT0 LT1, Media, COMBO_TERM_SLOW)
+ZMK_COMBO_ADV(mute, &kp K_VOL_MUTE, LT0 LT1, Media, COMBO_TERM_SLOW)
