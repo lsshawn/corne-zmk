@@ -266,10 +266,10 @@ ZMK_BEHAVIOR(vim_diw, tap_dance,
         media_layer {
             label = "Media";
             bindings = <
-    &trans   &none       NAV_UP       &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   NAV_LEFT    NAV_DOWN     NAV_DOWN          &none           &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
-                                              &trans         &trans          &trans              &trans       &trans  
+            &trans   &kp PG_UP   &none       NAV_UP       &kp K_VOL_DOWN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN     NAV_DOWN          &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)   &kp LG(D)      &kp LG(V)               &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
+                                              &trans      &trans          &trans                 &trans       &trans    &trans
         >;
         };
         vim_layer {
