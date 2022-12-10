@@ -10,6 +10,7 @@
 #define Num 1
 #define Nav 2
 #define Media 3
+#define Vim 4
 
 #include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
@@ -84,6 +85,55 @@ ZMK_BEHAVIOR(bs_del_media, mod_morph,
 ZMK_BEHAVIOR(copy_cut, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
+)
+
+// tap: space | space + tap: dot -> space -> sticky shift | hold: activate layer
+ZMK_BEHAVIOR(dot_spc, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+)
+ZMK_BEHAVIOR(spc_morph, mod_morph,
+    bindings = <&kp SPACE>, <&dot_spc>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+ZMK_BEHAVIOR(lt_spc, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&spc_morph>;
+)
+
+// vim: change inner word
+ZMK_BEHAVIOR(ciw, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp C &kp I &kp W>;
+)
+ZMK_BEHAVIOR(ciW, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp C &kp I &kp LS(W)>;
+)
+ZMK_BEHAVIOR(vim_ciw, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&ciw>, <&ciW>;
+)
+
+// vim: delete inner word
+ZMK_BEHAVIOR(diw, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp D &kp I &kp W>;
+)
+ZMK_BEHAVIOR(diW, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp D &kp I &kp LS(W)>;
+)
+ZMK_BEHAVIOR(vim_diw, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&diw>, <&diW>;
 )
 
 / {
@@ -191,8 +241,8 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
             bindings = <
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
             &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &to Num
-            &none      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH     &to Media
-                       &mo Nav   &lt Media SPACE   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
+            &mo Vim      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH     &to Media
+                       &mo Nav   &lt_spc Media 0   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
         >;
         };
         num_layer {
@@ -216,10 +266,18 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &none       NAV_UP       &kp K_VOL_DN   &kp K_VOL_UP    &kp K_MUTE          &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   NAV_LEFT    NAV_DOWN     NAV_DOWN          &none           &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)      &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
-                                              &trans         &trans          &trans              &trans       &trans         &trans
+            &trans   &kp PG_UP     &none       NAV_UP       &kp K_VOL_DN    &kp K_VOL_UP        &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans   &kp PG_DOWN   NAV_LEFT    NAV_DOWN     NAV_DOWN        &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &kp LG(Z)     &kp LG(X)   &kp LG(C)    &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
+                                               &trans       &trans          &trans              &trans       &trans         &trans
+        >;
+        vim_layer {
+            label = "Vim";
+            bindings = <
+            &trans   &none      &none       &none       &none    &none        &kp LC(U)      &none   &none   &none   &none   &none
+            &trans   &none   &none    &none     &none        &none           &kp LC(D) &none   &none   &none   &none   &none   
+            &trans   &kp LG(Z)     &kp LG(X)   &vim_ciw    &vim_diw       &none           &none   &none   &none   &none   &none   &none
+                                               &trans       &trans          &trans              &trans       &kp LC(W)         &trans
         >;
         };
     };
