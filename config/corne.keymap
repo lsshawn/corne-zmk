@@ -110,14 +110,14 @@ ZMK_BEHAVIOR(ciw, macro,
     tap-ms = <5>;
     bindings = <&kp C &kp I &kp W>;
 )
-ZMK_BEHAVIOR(ciW, macro,
+ZMK_BEHAVIOR(ciwc, macro,
     wait-ms = <0>;
     tap-ms = <5>;
     bindings = <&kp C &kp I &kp LS(W)>;
 )
 ZMK_BEHAVIOR(vim_ciw, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&ciw>, <&ciW>;
+    bindings = <&ciw>, <&ciwc>;
 )
 
 // vim: delete inner word
@@ -126,14 +126,14 @@ ZMK_BEHAVIOR(diw, macro,
     tap-ms = <5>;
     bindings = <&kp D &kp I &kp W>;
 )
-ZMK_BEHAVIOR(diW, macro,
+ZMK_BEHAVIOR(diwc, macro,
     wait-ms = <0>;
     tap-ms = <5>;
     bindings = <&kp D &kp I &kp LS(W)>;
 )
 ZMK_BEHAVIOR(vim_diw, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&diw>, <&diW>;
+    bindings = <&diw>, <&diwc>;
 )
 
 / {
