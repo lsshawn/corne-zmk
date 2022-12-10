@@ -136,6 +136,12 @@ ZMK_BEHAVIOR(vim_diw, tap_dance,
     bindings = <&diw>, <&diwc>;
 )
 
+ZMK_BEHAVIOR(vim_q, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp COLON &kp Q &kp EXCL &kp RET>;
+)
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -275,7 +281,7 @@ ZMK_BEHAVIOR(vim_diw, tap_dance,
         vim_layer {
             label = "Vim";
             bindings = <
-            &trans   &none        &none       &none       &none             &none     &kp LC(U)     &none   &none   &none   &none   
+            &trans   &vim_q        &none       &none       &none             &none     &kp LC(U)     &none   &none   &none   &none   
             &trans   &none        &none       &none       &none             &none     &kp LC(D)     &none   &none   &none   &none      
             &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw          &none     &none         &none   &none   &none   &none   
                                                &trans       &trans          &trans              &trans       &kp LC(W)         &trans
