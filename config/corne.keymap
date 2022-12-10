@@ -267,7 +267,7 @@ ZMK_BEHAVIOR(vim_diw, tap_dance,
             label = "Media";
             bindings = <
             &trans   &kp PG_UP     &none       NAV_UP       &kp K_VOL_DN    &kp K_VOL_UP        &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   &kp PG_DOWN   NAV_LEFT    NAV_DOWN     NAV_DOWN        &kp LG(F)           &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &kp PG_DOWN   NAV_LEFT    NAV_DOWN     NAV_RIGHT        &kp LG(F)          &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
             &trans   &kp LG(Z)     &kp LG(X)   &kp LG(C)    &kp LG(D)       &kp LG(V)           &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
                                                &trans       &trans          &trans              &trans       &trans         &trans
         >;
@@ -275,9 +275,9 @@ ZMK_BEHAVIOR(vim_diw, tap_dance,
         vim_layer {
             label = "Vim";
             bindings = <
-            &trans   &none      &none       &none       &none    &none        &kp LC(U)      &none   &none   &none   &none   &none
-            &trans   &none   &none    &none     &none        &none           &kp LC(D) &none   &none   &none   &none   &none   
-            &trans   &kp LG(Z)     &kp LG(X)   &vim_ciw    &vim_diw       &none           &none   &none   &none   &none   &none   &none
+            &trans   &none        &none       &none       &none             &none     &kp LC(U)     &none   &none   &none   &none   
+            &trans   &none        &none       &none       &none             &none     &kp LC(D)     &none   &none   &none   &none      
+            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw          &none     &none         &none   &none   &none   &none   
                                                &trans       &trans          &trans              &trans       &kp LC(W)         &trans
         >;
         };
