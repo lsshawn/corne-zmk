@@ -246,7 +246,7 @@ ZMK_BEHAVIOR(vim_q, macro,
           label = "Base";
             bindings = <
             &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
-            &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &to Num
+            &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &key_repeat
             &mo Vim      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH     &to Media
                        &mo Nav   &lt_spc Media 0   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
         >;
@@ -273,7 +273,7 @@ ZMK_BEHAVIOR(vim_q, macro,
             label = "Media";
             bindings = <
             &trans   &kp PG_UP   &none       NAV_UP       &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN     NAV_DOWN        &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN     NAV_RIGHT        &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
             &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)   &kp LG(D)       &kp LG(V)               &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
                                               &trans      &trans          &trans                 &trans       &trans    &trans
         >;
@@ -283,7 +283,7 @@ ZMK_BEHAVIOR(vim_q, macro,
             bindings = <
             &trans   &vim_q        &none       &none       &none      &none           &kp LC(U)     &none  &none   &none   &none   &none   
             &trans   &none        &none       &none       &none       &none           &kp LC(D)     &none  &none   &none   &none   &none      
-            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &none         &none  &none   &none   &none   &none   
+            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &none         &none   &none   &none   &none   &none   
                                                &trans       &trans    &trans          &trans       &kp LC(W)         &trans
         >;
         };
