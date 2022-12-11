@@ -2,8 +2,8 @@
 #undef COMBO_HOOK
 #define COMBO_HOOK global-quick-tap-ms = <75>;
 
-#define COMBO_TERM_FAST 25
-#define COMBO_TERM_SLOW 35
+#define COMBO_TERM_FAST 35
+#define COMBO_TERM_SLOW 45
 
 ZMK_COMBO_ADV(rightEnter, &kp RET, RM1 RM2, ALL, COMBO_TERM_FAST)
 ZMK_COMBO_ADV(esc, &kp ESC, LM2 LM1, ALL, COMBO_TERM_FAST)
