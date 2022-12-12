@@ -74,6 +74,13 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     hold-trigger-on-release;            // requires PR #1423
 )
 
+ZMK_BEHAVIOR(fn_td, hold_tap,  // right-hand HRMs
+    flavor = "tap-preferred";
+    tapping-term-ms = <300>;
+    quick-tap-ms = <0>;
+    bindings = <&kp>, <&kp>;
+)
+
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: num layer
 ZMK_BEHAVIOR(bs_del_media, mod_morph,
     bindings = <&lt Media BSPC>, <&kp DEL>;
@@ -142,119 +149,49 @@ ZMK_BEHAVIOR(vim_q, macro,
     bindings = <&kp COLON &kp Q &kp EXCL &kp RET>;
 )
 
+ZMK_BEHAVIOR(colon_quote, tap_dance,
+    tapping-term-ms = <300>;
+    bindings = <&kp APOS>, <&kp COLON>;
+)
+
+ZMK_BEHAVIOR(par_td, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
+)
+ZMK_BEHAVIOR(bkt_td, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LBKT>, <&kp RBKT>;
+)
+ZMK_BEHAVIOR(brc_td, tap_dance,
+    tapping-term-ms = <300>;
+    bindings = <&kp LBRC>, <&kp RBRC>;
+)
+ZMK_BEHAVIOR(lt_gt, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LT>, <&kp GT>;
+)
+ZMK_BEHAVIOR(at_amps, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp AT>, <&kp AMPS>;
+)
+
 / {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        hs: homerow_shifts {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFTS";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-        td: tapdance {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        fn_td: fn_td {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FN_TAPDANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        mo1_to1: mo1_to1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "mo1_to1";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&to 1>;
-            mods = <(MOD_LGUI)>;
-        };
-        colon_quote: colon_quote {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COLON_QUOTE";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp APOS>, <&kp COLON>;
-        };
-        par_td: par_td {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PAR_TD";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LPAR>, <&kp RPAR>;
-        };
-        bkt_td: bkt_td {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BKT_TD";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LBKT>, <&kp RBKT>;
-        };
-        brc_td: brc_td {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BRC_TD";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&kp LBRC>, <&kp RBRC>;
-        };
-        lt_gt: lt_gt {
-            compatible = "zmk,behavior-tap-dance";
-            label = "lt_gt";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LT>, <&kp GT>;
-        };
-        grave_tilde: grave_tilde {
-            compatible = "zmk,behavior-tap-dance";
-            label = "grave_tilde";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp GRAVE>, <&kp TILDE>;
-        };
-        at_amps: at_amps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "at_amps";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp AT>, <&kp AMPS>;
-        };
-    };
-
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
           label = "Base";
             bindings = <
-            &kp TAB    &kp Q   &kp W   &kp F    &kp P    &kp B                 &kp J      &kp L       &kp U       &kp Y        &colon_quote   &to Nav
-            &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T    &kp G                 &kp M      &hmr RSHIFT N       &hmr LCTRL E       &hmr LALT I        &hmr RGUI O     &key_repeat
-            &mo Vim      &kp Z   &kp X   &kp C    &kp D    &kp V                 &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH     &to Media
-                       &mo Nav   &lt_spc Media 0   &sk LSHIFT                  &mo Num    &bs_del_media   &kp LCTRL
+            &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &colon_quote   &to Nav
+            &kp ESC    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &key_repeat
+            &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &to Media
+                                                   &mo Nav         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_media   &kp LCTRL
         >;
         };
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &grave_tilde  &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp MINUS             &at_amps    &par_td    &bkt_td    &brc_td       &trans           &trans
+            &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp MINUS             &at_amps    &par_td    &bkt_td    &brc_td       &trans           &trans
             &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp EQUAL             &kp H       &kp J      &kp K      &hmr RALT L    &hm LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
                                                   &kp N0         &trans         &trans                &none       &trans     &trans
@@ -263,28 +200,28 @@ ZMK_BEHAVIOR(vim_q, macro,
         nav_layer {
             label = "Nav";
             bindings = <
-            &trans       &kp TAB   &kp LS(TAB) &copy_cut       &kp LS(INS)   &kp K_UNDO            &none      NAV_BSPC    NAV_DEL  &none  &none  &none 
-            &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP   NAV_RIGHT   &none   &none
-            &trans       &kp F5    &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))        &kp HOME            &kp PG_DN        &kp PG_UP         &kp END           &kp INS             &trans
-                                                 &trans         &kp PRSC        &trans               &trans              &trans           &trans
+            &trans       &kp TAB   &kp LS(TAB) &copy_cut        &kp LS(INS)   &kp K_UNDO           &none      NAV_BSPC    NAV_DEL      &none      &none   &none 
+            &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP       NAV_RIGHT  &none   &none
+            &trans       &kp F5    &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))        &kp HOME   &kp PG_DN   &kp PG_UP    &kp END    &kp INS &trans
+                                               &trans           &kp PRSC      &trans               &trans     &trans      &trans
         >;
         };
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &kp PG_UP   &none       NAV_UP       &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK        &mmv MOVE_UP      &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN     NAV_RIGHT        &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT   &mmv MOVE_DOWN    &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans   &kp LG(Z)   &kp LG(X)    &kp LG(C)   &kp LG(D)       &kp LG(V)               &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
-                                              &trans      &trans          &trans                 &trans       &trans    &trans
+            &trans   &kp PG_UP   &none       NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &kp LG(Z)   &kp LG(X)   &kp LG(C)   &kp LG(D)       &kp LG(V)            &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
+                                             &trans      &trans          &trans               &trans              &trans          &trans
         >;
         };
         vim_layer {
             label = "Vim";
             bindings = <
-            &trans   &vim_q        &none       &none       &none      &none           &kp LC(U)     &none  &none   &none   &none   &none   
+            &trans   &vim_q       &none       &none       &none       &none           &kp LC(U)     &none  &none   &none   &none   &none   
             &trans   &none        &none       &none       &none       &none           &kp LC(D)     &none  &none   &none   &none   &none      
-            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &none         &none   &none   &none   &none   &none   
-                                               &trans       &trans    &trans          &trans       &kp LC(W)         &trans
+            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &none         &none   &none  &none   &none   &none   
+                                               &trans     &trans      &trans          &trans        &kp LC(W)         &trans
         >;
         };
     };
