@@ -81,9 +81,9 @@ ZMK_BEHAVIOR(fn_td, hold_tap,  // right-hand HRMs
     bindings = <&kp>, <&kp>;
 )
 
-// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: num layer
-ZMK_BEHAVIOR(bs_del_media, mod_morph,
-    bindings = <&lt Media BSPC>, <&kp DEL>;
+// tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: hyper
+ZMK_BEHAVIOR(bs_del_hyper, mod_morph,
+    bindings = <&fn_td LC(LS(LA(LGUI))) BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <MOD_LSFT>;  // requires PR #1412
 )
@@ -185,7 +185,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &colon_quote   &to Nav
             &mo Num    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &key_repeat
             &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &to Media
-                                                   &mo Nav         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_media   &kp LCTRL
+            &mo Nav         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL
         >;
         };
         num_layer {
@@ -211,7 +211,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             bindings = <
             &trans   &kp PG_UP   &none       NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_LEFT    &trans
             &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans   &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(N4)       &kp LG(N5)            &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
+            &trans   &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(N4)       &kp LG(N5)            &none         &none   &none  &none   &none   &none   
                                              &trans      &trans          &trans               &trans              &trans          &trans
         >;
         };
@@ -220,7 +220,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             bindings = <
             &trans   &vim_q       &none       &none       &none       &none           &kp LC(U)     &none  &none   &none   &none   &none   
             &trans   &none        &none       &none       &none       &none           &kp LC(D)     &none  &none   &none   &none   &none      
-            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &none         &none   &none  &none   &none   &none   
+            &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
                                                &trans     &trans      &trans          &trans        &kp LC(W)         &trans
         >;
         };
