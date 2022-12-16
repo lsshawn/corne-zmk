@@ -149,11 +149,6 @@ ZMK_BEHAVIOR(vim_q, macro,
     bindings = <&kp COLON &kp Q &kp EXCL &kp RET>;
 )
 
-ZMK_BEHAVIOR(colon_quote, tap_dance,
-    tapping-term-ms = <300>;
-    bindings = <&kp APOS>, <&kp COLON>;
-)
-
 ZMK_BEHAVIOR(par_td, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp LPAR>, <&kp RPAR>;
@@ -182,9 +177,9 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         default_layer {
           label = "Base";
             bindings = <
-            &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &colon_quote   &to Nav
+            &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS    &none
             &mo Num    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &key_repeat
-            &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &to Media
+            &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &none
             &mo Nav         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL
         >;
         };
