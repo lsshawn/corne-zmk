@@ -149,6 +149,43 @@ ZMK_BEHAVIOR(vim_q, macro,
     bindings = <&kp COLON &kp Q &kp EXCL &kp RET>;
 )
 
+// tmux pane navigation
+ZMK_BEHAVIOR(tmux_left, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(A) &kp H>;
+)
+
+ZMK_BEHAVIOR(tmux_right, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(A) &kp L>;
+)
+
+ZMK_BEHAVIOR(tmux_up, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(A) &kp K>;
+)
+
+ZMK_BEHAVIOR(tmux_down, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(A) &kp J>;
+)
+
+ZMK_BEHAVIOR(tmux_prev_win, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(A) &kp P>;
+)
+
+ZMK_BEHAVIOR(tmux_next_win, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(A) &kp N>;
+)
+
 ZMK_BEHAVIOR(par_td, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp LPAR>, <&kp RPAR>;
@@ -213,8 +250,8 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         vim_layer {
             label = "Vim";
             bindings = <
-            &trans   &vim_q       &none       &none       &none       &none           &kp LC(U)     &none  &none   &none   &none   &none   
-            &trans   &none        &none       &none       &none       &none           &kp LC(D)     &none  &none   &none   &none   &none      
+            &trans   &vim_q       &none       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   
+            &trans   &none        &none       &none       &none       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      
             &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
                                                &trans     &trans      &trans          &trans        &kp LC(W)         &trans
         >;
