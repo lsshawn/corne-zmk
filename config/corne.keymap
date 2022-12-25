@@ -250,8 +250,8 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         vim_layer {
             label = "Vim";
             bindings = <
-            &trans   &vim_q       &none       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   
-            &trans   &none        &none       &none       &none       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      
+            &trans   &vim_q       &none       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   &none
+            &trans   &none        &none       &none       &none       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      &none
             &trans   &kp LG(Z)    &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
                                                &trans     &trans      &trans          &trans        &kp LC(W)         &trans
         >;
