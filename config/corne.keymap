@@ -113,7 +113,7 @@ ZMK_BEHAVIOR(lt_spc, hold_tap,
 
 // brackets mod
 ZMK_BEHAVIOR(par_morph, mod_morph,
-    bindings = <&kp LPAR>, <&kp R_PAR>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
