@@ -111,6 +111,22 @@ ZMK_BEHAVIOR(lt_spc, hold_tap,
     bindings = <&mo>, <&spc_morph>;
 )
 
+// brackets mod
+ZMK_BEHAVIOR(par_morph, mod_morph,
+    bindings = <&kp LPAR>, <&kp R_PAR>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+ZMK_BEHAVIOR(bkt_morph, mod_morph,
+    bindings = <&kp LBKT>, <&kp RBKT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+ZMK_BEHAVIOR(brc_morph, mod_morph,
+    bindings = <&kp LBRC>, <&kp RBRC>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 // vim: change inner word
 ZMK_BEHAVIOR(ciw, macro,
     wait-ms = <0>;
@@ -236,7 +252,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         num_layer {
             label = "Num";
             bindings = <
-            &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp EQUAL             &at_amps    &kp LPAR    &kp LBKT    &kp LBRC       &trans           &trans
+            &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp EQUAL             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
             &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp MINUS             &kp H       &kp J      &kp K      &hmr RALT L   &hmr LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
                                                   &fn_td F10 N0    &trans         &trans                &none       &trans     &trans
