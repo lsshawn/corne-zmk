@@ -250,9 +250,9 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
           label = "Base";
             bindings = <
             &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS    &none
-            &mo Num    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &key_repeat
-            &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &none
-            &mo_kp Nav ESC         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &mt LCTRL ENTER 
+            &mo Num    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
+            &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
+            &mo_kp Nav ESC         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL  
         >;
         };
         num_layer {
