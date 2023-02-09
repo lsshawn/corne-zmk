@@ -93,7 +93,6 @@ ZMK_BEHAVIOR(copy_cut, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp LC(INS)>, <&kp LC(X)>;
 )
-
 // tap: space | space + tap: dot -> space -> sticky shift | hold: activate layer
 ZMK_BEHAVIOR(dot_spc, macro,
     wait-ms = <0>;
@@ -109,6 +108,20 @@ ZMK_BEHAVIOR(lt_spc, hold_tap,
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&spc_morph>;
+)
+
+ZMK_BEHAVIOR(nav_esc, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo Nav>, <&kp ESC>;
+)
+
+ZMK_BEHAVIOR(ctrl_enter, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo LCTRL>, <&kp ENTER>;
 )
 
 // brackets mod
@@ -246,7 +259,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS    &none
             &mo Num    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &key_repeat
             &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &none
-            &mo Nav         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL
+            &nav_esc         &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &ctrl_enter
         >;
         };
         num_layer {
