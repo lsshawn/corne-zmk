@@ -306,5 +306,6 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &trans    &kp Z         &kp X         &kp C           &kp V             &kp B                 &kp N      &kp M           &kp COMMA     &kp DOT      &kp FSLH    &key_repeat
             &kp LALT    &kp SPACE   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL  
         >;
+        };
     };
 };
