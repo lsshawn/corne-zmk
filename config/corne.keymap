@@ -11,6 +11,7 @@
 #define Nav 2
 #define Media 3
 #define Vim 4
+#define Qwerty 5
 
 #include "combos.dtsi"  // must be sourced after layer-shortcuts
 #include "mouse.dtsi"
@@ -255,7 +256,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         default_layer {
           label = "Base";
             bindings = <
-            &kp TAB    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &kp ESC
+            &kp ESC    &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
             &mo Num    &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
             &mo Vim    &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
             &mo Nav    &lt_spc Media 0   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL  
@@ -297,5 +298,13 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
                                                &trans     &trans      &trans          &trans        &kp LC(W)         &trans
         >;
         };
+        qwerty_layer {
+          label = "Qwerty";
+            bindings = <
+            &kp ESC   &kp Q         &kp W         &kp E           &kp R             &kp T                 &kp Y      &kp U           &kp I         &kp O        &kp P       &to Base
+            &trans    &kp A         &kp S         &kp D           &kp F             &kp G                 &kp H      &hkp J          &kp K         &kp L        &kp SEMI    &kp ENTER
+            &trans    &kp Z         &kp X         &kp C           &kp V             &kp B                 &kp N      &kp M           &kp COMMA     &kp DOT      &kp FSLH    &key_repeat
+            &kp LALT    &kp SPACE   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL  
+        >;
     };
 };
