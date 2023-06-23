@@ -85,7 +85,7 @@ ZMK_BEHAVIOR(fn_td, hold_tap,  // right-hand HRMs
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: hyper
 ZMK_BEHAVIOR(bs_del_hyper, mod_morph,
     bindings = <&kp BSPC>, <&kp DEL>;
-    mods = <(LSHIFT|RSHIFT)>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
     keep-mods = <RSHIFT>;  // requires PR #1412
 )
 
@@ -105,17 +105,17 @@ ZMK_BEHAVIOR(mo_kp, hold_tap,
 // brackets mod
 ZMK_BEHAVIOR(par_morph, mod_morph,
     bindings = <&kp LPAR>, <&kp RPAR>;
-    mods = <(LSHIFT|RSHIFT)>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 ZMK_BEHAVIOR(bkt_morph, mod_morph,
     bindings = <&kp LBKT>, <&kp RBKT>;
-    mods = <(LSHIFT|RSHIFT)>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 ZMK_BEHAVIOR(brc_morph, mod_morph,
     bindings = <&kp LBRC>, <&kp RBRC>;
-    mods = <(LSHIFT|RSHIFT)>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // vim: change inner word
@@ -240,10 +240,10 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         default_layer {
           label = "Base";
             bindings = <
-            &kp ESC      &kp Q         &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
-            &mo Num      &hml LGUI A   &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
-            &mo Vim      &kp Z         &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
-            &mo Nav      &mo_kp Media SPACE   &sk LSHIFT            &mo Num    &bs_del_hyper   &kp LCTRL  
+            &kp ESC      &kp Q                &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
+            &mo Num      &hml LGUI A          &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
+            &mo Vim      &kp Z                &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
+            &mo Nav      &mo_kp Media SPACE   &sk LSHIFT    &mo Num         &bs_del_hyper   &kp LCTRL  
         >;
         };
         num_layer {
