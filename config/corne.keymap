@@ -85,8 +85,8 @@ ZMK_BEHAVIOR(fn_td, hold_tap,  // right-hand HRMs
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete | hold: hyper
 ZMK_BEHAVIOR(bs_del_hyper, mod_morph,
     bindings = <&fn_td LC(LS(LA(LGUI))) BSPC>, <&kp DEL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <MOD_LSFT>;  // requires PR #1412
+    mods = <(LSHIFT|RSHIFT)>;
+    keep-mods = <LSHIFT>;  // requires PR #1412
 )
 
 // tap: copy | double-tap: cut
@@ -102,7 +102,7 @@ ZMK_BEHAVIOR(dot_spc, macro,
 )
 ZMK_BEHAVIOR(spc_morph, mod_morph,
     bindings = <&kp SPACE>, <&dot_spc>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
+    mods = <(LSHIFT|RSHIFT)>;
 )
 ZMK_BEHAVIOR(lt_spc, hold_tap,
     flavor = "balanced";
@@ -121,17 +121,17 @@ ZMK_BEHAVIOR(mo_kp, hold_tap,
 // brackets mod
 ZMK_BEHAVIOR(par_morph, mod_morph,
     bindings = <&kp LPAR>, <&kp RPAR>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
+    mods = <(LSHIFT|RSHIFT)>;
 )
 
 ZMK_BEHAVIOR(bkt_morph, mod_morph,
     bindings = <&kp LBKT>, <&kp RBKT>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
+    mods = <(LSHIFT|RSHIFT)>;
 )
 
 ZMK_BEHAVIOR(brc_morph, mod_morph,
     bindings = <&kp LBRC>, <&kp RBRC>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
+    mods = <(LSHIFT|RSHIFT)>;
 )
 
 // vim: change inner word
@@ -277,7 +277,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &trans       &kp TAB   &kp LS(TAB) &copy_cut        &kp LS(INS)   &kp K_UNDO           &none      NAV_BSPC    NAV_DEL      &none      &none   &none 
             &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP       NAV_RIGHT  &none   &none
             &trans       &kp F5    &kp LC(W)   &kp LC(LS(TAB))  &kp RC(TAB)   &kp LC(LS(T))        &kp HOME   &kp PG_DN   &kp PG_UP    &kp END    &kp INS &trans
-                                               &trans           &kp PRSC      &trans               &trans     &trans      &trans
+                                               &trans           &kp PSCRN      &trans               &trans     &trans      &trans
         >;
         };
         media_layer {
