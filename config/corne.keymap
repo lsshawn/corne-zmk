@@ -156,6 +156,12 @@ ZMK_BEHAVIOR(vim_q, macro,
     bindings = <&kp ESC &kp COLON &kp Q &kp EXCL &kp RET>;
 )
 
+ZMK_BEHAVIOR(vim_w, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp ESC &kp COLON &kp W &kp Q &kp EXCL &kp RET>;
+)
+
 ZMK_BEHAVIOR(vim_pbuf, macro,
     wait-ms = <0>;
     tap-ms = <5>;
@@ -241,8 +247,8 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
           label = "Base";
             bindings = <
             &kp ESC      &kp Q                &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
-            &mo Num      &hml LGUI A          &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
-            &mo Vim      &kp Z                &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
+            &sl Vim      &hml LGUI A          &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
+            &mo Num      &kp Z                &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
             &mo Nav      &mo_kp Media SPACE   &sk LSHIFT    &mo Num         &bs_del_hyper   &kp LCTRL  
         >;
         };
@@ -276,7 +282,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         vim_layer {
             label = "Vim";
             bindings = <
-            &trans   &vim_q          &none       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   &none
+            &trans   &vim_q          &vim_w       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   &none
             &trans   &none           &vim_pbuf      &none       &vim_nbuf       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      &none
             &trans   &tmux_max_pane  &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
                                                &trans     &trans      &trans          &trans        &kp LC(W)         &trans
@@ -285,7 +291,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         qwerty_layer {
           label = "Qwerty";
             bindings = <
-            &kp TAB     &kp Q         &kp W         &kp E           &kp R             &kp T                 &kp Y      &kp U      &kp I         &kp O        &kp P       &to Base
+            &kp TAB     &kp Q         &kp W         &kp E           &kp R             &kp T                 &kp Y      &kp U      &kp I         &kp O        &kp P       &kp GRAVE
             &kp LSHIFT    &kp A         &kp S         &kp D           &kp F             &kp G                 &kp H      &kp J      &kp K         &kp L        &kp SEMI    &kp ENTER
             &kp LCTRL    &kp Z         &kp X         &kp C           &kp V             &kp B                 &kp N      &kp M      &kp COMMA     &kp DOT      &kp FSLH    &key_repeat
             &kp LALT    &kp SPACE   &kp ESC            &mo Num    &bs_del_hyper   &kp LCTRL  

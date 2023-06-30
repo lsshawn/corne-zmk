@@ -37,3 +37,4 @@ ZMK_COMBO(tobase, &to Base, LH0 RH0, ALL, COMBO_TERM_SLOW)
 ZMK_COMBO(capsword, &caps_word, LM4 RM4, Base Num, COMBO_TERM_SLOW)
 
 ZMK_COMBO(mute, &kp K_MUTE, LT0 LT1, Media, COMBO_TERM_SLOW)
+ZMK_COMBO(returnToBase, &to Base, RT5 RM5, ALL, COMBO_TERM_SLOW)
