@@ -275,7 +275,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             bindings = <
             &trans   &kp PG_UP   &none       NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_LEFT    &trans
             &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &none                &mwh SCROLL_DOWN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans   &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(N4)       &kp LG(N5)            &none         &none   &none  &none   &none   &none   
+            &trans   &none      &kp LG(N1)   &kp LG(N2)   &kp LG(N3)     &kp LG(N5)            &none         &none   &none  &none   &none   &none   
                                              &trans      &trans          &trans               &trans              &trans          &trans
         >;
         };
