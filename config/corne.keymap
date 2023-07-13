@@ -284,7 +284,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             bindings = <
             &trans   &vim_q          &vim_w       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   &none
             &trans   &none           &vim_pbuf      &none       &vim_nbuf       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      &none
-            &trans   &tmux_max_pane  &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &trans
+            &trans   &tmux_max_pane  &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &ext_power EP_ON
                                                &trans     &trans      &trans          &trans        &kp LC(W)         &trans
         >;
         };
