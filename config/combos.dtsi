@@ -1,11 +1,11 @@
 // use global-quick-tap-ms for combos (requires PR 1387)
 #undef COMBO_HOOK
-#define COMBO_HOOK global-quick-tap-ms = <75>;
+#define COMBO_HOOK require-prior-idle-ms = <150>;
 
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 55
 
-ZMK_COMBO(rightEnter, &kp RET, RB2 RB2, ALL, COMBO_TERM_SLOW)
+ZMK_COMBO(rightEnter, &kp RET, RB1 RB2, ALL, COMBO_TERM_SLOW)
 ZMK_COMBO(leftEnter, &kp RET, LT1 LT2, Base, COMBO_TERM_SLOW)
 ZMK_COMBO(esc, &kp ESC, LB2 LB1, ALL, COMBO_TERM_SLOW)
 
@@ -16,9 +16,10 @@ ZMK_COMBO(excl, &kp EXCL, RB1 RB3, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(qmark, &kp QMARK, RB2 RB3, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(bslh, &kp BSLH, RB3 RB4, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(equal, &kp EQUAL, RM0 RM1, Base Num, COMBO_TERM_SLOW)
+ZMK_COMBO(semi, &kp SEMI, RM3 RM4, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(under, &kp UNDER, LT0 LT1, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(plus, &kp PLUS, LB0 LB1, Base Num, COMBO_TERM_SLOW)
-ZMK_COMBO(minus, &kp MINUS, LM0 LM1, Base, COMBO_TERM_SLOW)
+ZMK_COMBO(minus, &kp MINUS, LM0 LM1, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(grave, &kp GRAVE, LT3 LT4, Base Num, COMBO_TERM_SLOW)
 ZMK_COMBO(amps, &kp AMPS, RT0 RM0, Num, COMBO_TERM_SLOW)
 ZMK_COMBO(rpar, &kp RPAR, RT1 RM1, Num, COMBO_TERM_SLOW)
