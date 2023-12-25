@@ -252,7 +252,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &sl Vim      &kp Q                &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
             &kp ESC      &hml LGUI A          &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr LALT I  &hmr RGUI O    &kp ENTER
             &to Num      &kp Z                &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
-            &mo Nav      &mo_kp Media SPACE   &sk LSHIFT    &mo Num         &bs_del_hyper   &kp LCTRL  
+            &none        &mo_kp Media SPACE   &kp LSHIFT    &mo Num         &bs_del_hyper   &kp LCTRL  
         >;
         };
         num_layer {
@@ -261,7 +261,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp EQUAL             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
             &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp MINUS             &kp H       &kp J      &kp K      &hmr RALT L   &hmr LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
-                                                  &fn_td F10 N0    &trans       &trans                &none       &trans     &trans
+                                                  &fn_td F10 N0    &trans       &trans                &none       &trans     &key_repeat
         >;
         };
         nav_layer {
@@ -276,9 +276,9 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &kp PG_UP   &none       NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_LEFT    &trans
-            &trans   &kp PG_DN   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &kp C_BRI_INC        &mwh SCROLL_DOWN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
-            &trans   &kp LG(P)   &kp LG(N1)  &kp LG(N2)  &kp ESC         &kp C_BRI_DEC        &none               &kp ENTER           &none           &kp K_APPLICATION   &none   &none   
+            &trans   &kp PG_UP   NAV_UP      &none      &kp K_VOL_DN    &kp K_VOL_UP         &mwh SCROLL_UP      &mkp LCLK       &mmv MOVE_UP    &mkp RCLK         &mwh SCROLL_LEFT    &trans
+            &trans   &kp PG_DN   NAV_DOWN    &kp ESC    &kp ENTER       &kp C_BRI_INC        &mwh SCROLL_DOWN    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &mwh SCROLL_RIGHT   &trans
+            &trans   &kp LG(P)   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)         &kp C_BRI_DEC        &none               &kp ENTER           &none           &kp K_APPLICATION   &none   &none   
                                              &trans      &trans          &trans               &trans              &trans          &trans
         >;
         };
