@@ -255,7 +255,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &mo Nav      &mo_kp Media SPACE   &kp LSHIFT    &mo Num    &bs_del_hyper    &kp LCTRL
         >;
         };
-        num_layrr {
+        num_layer {
             label = "Num";
             bindings = <
             &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp EQUAL             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
