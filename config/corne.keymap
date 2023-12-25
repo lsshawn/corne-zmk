@@ -261,7 +261,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp EQUAL             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
             &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp MINUS             &kp H       &kp J      &kp K      &hmr RALT L   &hmr LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
-                                                  &fn_td F10 N0    &trans         &kp UNDER                &none       &trans     &trans
+                                                  &fn_td F10 N0    &trans       &trans                &none       &trans     &trans
         >;
         };
         nav_layer {
