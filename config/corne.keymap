@@ -94,7 +94,7 @@ ZMK_BEHAVIOR(bs_del_hyper, mod_morph,
 
 ZMK_BEHAVIOR(emdash, macro,
     wait-ms = <0>;
-    tap-ms = <300>;
+    tap-ms = <30>;
     bindings = <&kp RALT &kp MINUS &kp MINUS &kp MINUS>;
 )
 
