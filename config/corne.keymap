@@ -92,6 +92,11 @@ ZMK_BEHAVIOR(bs_del_hyper, mod_morph,
     keep-mods = <RSHIFT>;  // requires PR #1412
 )
 
+ZMK_BEHAVIOR(emdash, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp RALT>, <&kp MINUS>,<&kp MINUS>,<&kp MINUS>;
+)
+
 ZMK_BEHAVIOR(minus_emdash, mod_morph,
     bindings = <&kp MINUS>, <&emdash>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -254,10 +259,6 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
     bindings = <&kp AT>, <&kp AMPS>;
 )
 
-ZMK_BEHAVIOR(emdash, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = <&kp RALT>, <&kp MINUS>,<&kp MINUS>,<&kp MINUS>;
-)
 
 / {
     keymap {
@@ -276,7 +277,7 @@ ZMK_BEHAVIOR(emdash, tap_dance,
             label = "Num";
             bindings = <
             &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp UNDER             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
-            &trans   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &minus_emdash      &kp H       &hmr RSHIFT J      &kp K      &hmr RALT L   &hmr LGUI SEMI    &trans
+            &emdash   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &kp MINUS             &kp H       &hmr RSHIFT J      &kp K      &hmr RALT L   &hmr LGUI SEMI    &trans
             &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
                                                   &fn_td F10 N0    &trans       &trans                &none       &trans     &key_repeat
         >;
