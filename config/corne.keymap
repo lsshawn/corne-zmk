@@ -64,6 +64,7 @@ ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>;
+    require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
@@ -74,6 +75,7 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
     tapping-term-ms = <280>;
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&kp>, <&kp>;
+    require-prior-idle-ms = <150>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;            // requires PR #1423
 )
@@ -292,15 +294,15 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
                                                &trans           &kp PSCRN      &trans               &trans     &trans      &trans
         >;
         };
-        media_layer {
-            label = "Media";
-            bindings = <
-            &trans   &kp LG(L)   &toggletab  NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &mwh SCROLL_LEFT    &trans
-            &trans   &kp LG(H)   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &kp C_BRI_INC        U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
-            &trans   &kp LG(P)   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)      &kp C_BRI_DEC        &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
-                                             &trans      &trans          &trans               &trans      &trans          &trans
-        >;
-        };
+        # media_layer {
+        #     label = "Media";
+        #     bindings = <
+        #     &trans   &kp LG(L)   &toggletab  NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &mwh SCROLL_LEFT    &trans
+        #     &trans   &kp LG(H)   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &kp C_BRI_INC        U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
+        #     &trans   &kp LG(P)   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)      &kp C_BRI_DEC        &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
+        #                                      &trans      &trans          &trans               &trans      &trans          &trans
+        # >;
+        # };
         vim_layer {
             label = "Vim";
             bindings = <
