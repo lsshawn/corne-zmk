@@ -46,7 +46,7 @@
 &lt {
     flavor = "balanced";
     tapping-term-ms = <200>;
-    quick_tap_ms = <150>;
+    quick_tap_ms = <QUICK_TAP_MS>;
 };
 
 &caps_word {  // mods deactivate caps-word, requires PR #1441
@@ -273,7 +273,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             &sl Vim      &kp Q                &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
             &kp ESC      &hml LGUI A          &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr RALT I  &hmr RGUI O    &kp ENTER
             &to Num      &kp Z                &kp X         &kp C           &kp D             &kp V                 &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
-            &mo Nav      &mo_kp Media SPACE   &kp LSHIFT    &mo Num    &bs_del_hyper    &kp LCTRL
+                                                            &mo Nav      &mo_kp Media SPACE   &kp LSHIFT    &mo_kp Num ENTER   &bs_del_hyper    &kp LCTRL
         >;
         };
         num_layer {
