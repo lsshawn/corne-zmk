@@ -297,8 +297,8 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         media_layer {
             label = "Media";
             bindings = <
-            &trans   &kp LG(L)   &toggletab  NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &mwh SCROLL_LEFT    &trans
-            &trans   &kp LG(H)   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &kp C_BRI_INC        U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
+            &trans   &kp LG(L)   &toggletab  NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         &none      &mkp LCLK       &none    &mkp RCLK           &none    &trans
+            &trans   &kp LG(H)   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &kp C_BRI_INC        &none      &none          &none    &none                &trans              &trans
             &trans   &kp LG(P)   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)      &kp C_BRI_DEC        &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
                                              &trans      &trans          &trans               &trans      &trans          &trans
         >;
