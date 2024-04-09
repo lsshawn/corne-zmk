@@ -268,7 +268,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         compatible = "zmk,keymap";
 
         default_layer {
-          label = "Base";
+          display-name = "Base";
             bindings = <
             &sl Vim      &kp Q                &kp W         &kp F           &kp P             &kp B                 &kp J      &kp L           &kp U         &kp Y        &kp APOS       &to Qwerty
             &kp ESC      &hml LGUI A          &hml LALT R   &hml LCTRL S    &hml LSHIFT T     &kp G                 &kp M      &hmr RSHIFT N   &hmr LCTRL E  &hmr RALT I  &hmr RGUI O    &kp ENTER
@@ -277,7 +277,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         >;
         };
         num_layer {
-            label = "Num";
+            display-name = "Num";
             bindings = <
             &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp UNDER             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
             &emdash   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &minus_emdash             &kp H       &hmr RSHIFT J      &kp K      &hmr RALT L   &hmr LGUI SEMI    &trans
@@ -286,7 +286,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         >;
         };
         nav_layer {
-            label = "Nav";
+            display-name = "Nav";
             bindings = <
             &trans       &kp TAB   &kp LS(TAB) &copy_cut        &kp LS(INS)   &kp K_UNDO           &none      NAV_BSPC    NAV_DEL      &none      &none   &none
             &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP       NAV_RIGHT  &none   &none
@@ -295,7 +295,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         >;
         };
         media_layer {
-            label = "Media";
+            display-name = "Media";
             bindings = <
             &trans   &kp LG(L)   &toggletab  NAV_UP      &kp K_VOL_DN    &kp K_VOL_UP         &none      &mkp LCLK       &none    &mkp RCLK           &none    &trans
             &trans   &kp LG(H)   NAV_LEFT    NAV_DOWN    NAV_RIGHT       &kp C_BRI_INC        &none      &none          &none    &none                &trans              &trans
@@ -304,7 +304,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         >;
         };
         vim_layer {
-            label = "Vim";
+            display-name = "Vim";
             bindings = <
             &trans   &vim_q          &vim_w       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   &none
             &trans   &none           &vim_pbuf      &none       &vim_nbuf       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      &none
@@ -313,7 +313,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         >;
         };
         qwerty_layer {
-          label = "Qwerty";
+          display-name = "Qwerty";
             bindings = <
             &kp TAB     &kp Q         &kp W         &kp E           &kp R             &kp T                 &kp Y      &kp U      &kp I         &kp O        &kp P       &kp GRAVE
             &kp LSHIFT    &kp A         &kp S         &kp D           &kp F             &kp G                 &kp H      &kp J      &kp K         &kp L        &kp SEMI    &kp ENTER
