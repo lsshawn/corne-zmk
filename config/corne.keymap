@@ -271,7 +271,7 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
           display-name = "Base";
             bindings = <
             &sl Vim      &kp Q                &kp W         &kp F           &kp P             &kp B         &kp J      &kp L           &kp U         &kp Y        &kp APOS       &none
-            &kp ESC      &kp A                &kp R         &kp S           &kp T             &kp G         &kp M      &kp N   &kp E  &kp I  &kp O    &kp ENTER
+            &kp ESC      &hml LGUI A          &kp R         &kp S           &kp T             &kp G         &kp M      &kp N   &kp E  &kp I  &hmr LGUI O    &kp ENTER
             &to Num      &kp Z                &kp X         &kp C           &kp D             &kp V         &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
                                                             &mo Nav   &mo_kp Media SPACE   &kp ESC          &mo Num   &bs_del_hyper &kp ENTER
         >;
