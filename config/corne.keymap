@@ -298,8 +298,8 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             display-name = "Media";
             bindings = <
             &trans   &kp LG(L)   &toggletab  &none            &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &none    &trans
-            &trans   &kp LG(H)   &none       &kp LC(LS(TAB))  &kp RC(TAB)     &none                U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
-            &trans   &kp LG(P)   &kp NAV_LEFT    &kp NAV_RIGHT            &kp ESC         &none                &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
+            &trans   &kp LG(H)   &kp LC(LS(TAB))  &kp RC(TAB)     &kp ESC     &none                  U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
+            &trans   &kp LG(P)   &kp NAV_LEFT    &kp NAV_RIGHT    &kp ENTER     &none            &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
                                              &trans           &trans          &trans               &trans      &trans          &trans
         >;
         };
