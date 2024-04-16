@@ -290,16 +290,16 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
             bindings = <
             &trans       &kp TAB   &kp LS(TAB) &copy_cut        &kp LS(INS)   &kp K_UNDO           &none      NAV_BSPC    NAV_DEL      &none      &to Qwerty   &none
             &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP       NAV_RIGHT  &none   &none
-            &trans       &none    &kp LC(W)    &none   &kp ESC   &kp LC(LS(T))        &kp HOME   &kp ENTER   &none    &kp END    &kp INS &trans
+            &trans       &none    &kp LC(W)    &none   &kp ESC   &kp LC(LS(T))                     &kp HOME   &kp ENTER   &none    &kp END    &kp INS &trans
                                                &trans           &kp PSCRN      &trans              &kp RSHIFT     &kp LCTRL      &kp LCTRL
         >;
         };
         media_layer {
             display-name = "Media";
             bindings = <
-            &trans   &kp LG(L)   &toggletab  &none           &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &none    &trans
-            &trans   &kp LG(H)   &none       &kp LC(LS(TAB))  &kp RC(TAB)       &kp C_BRI_INC        U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
-            &trans   &kp LG(P)   &kp LG(N1)  &kp LG(N2)       &kp LG(N3)      &kp C_BRI_DEC        &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
+            &trans   &kp LG(L)   &toggletab  &none            &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &none    &trans
+            &trans   &kp LG(H)   &none       &kp LC(LS(TAB))  &kp RC(TAB)     &none                U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
+            &trans   &kp LG(P)   &none       &none            &kp ESC         &none                &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
                                              &trans           &trans          &trans               &trans      &trans          &trans
         >;
         };
