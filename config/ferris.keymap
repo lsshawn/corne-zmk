@@ -58,7 +58,7 @@
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
-#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
+#define THUMBS  LH1 LH0 RH0 RH1 
 
 ZMK_BEHAVIOR(hml, hold_tap,  // left-hand HRMs
     flavor = "balanced";
@@ -270,55 +270,55 @@ ZMK_BEHAVIOR(at_amps, tap_dance,
         default_layer {
           display-name = "Base";
             bindings = <
-            &sl Vim      &kp Q                &kp W         &kp F           &kp P             &kp B         &kp J      &kp L           &kp U         &kp Y        &kp APOS       &none
-            &kp ESC      &hml LGUI A          &kp R         &kp S           &kp T             &kp G         &kp M      &kp N   &kp E  &kp I  &hmr LGUI O    &kp ENTER
-            &to Num      &kp Z                &kp X         &kp C           &kp D             &kp V         &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       &key_repeat
-                                                            &sk Nav   &mo_kp Media SPACE   &kp LSHIFT        &mo Num   &bs_del_hyper &kp ENTER
+            &kp Q                &kp W         &kp F           &kp P             &kp B         &kp J      &kp L           &kp U         &kp Y        &kp APOS       
+            &hml LGUI A          &kp R         &kp S           &kp T             &kp G         &kp M      &kp N   &kp E  &kp I  &hmr LGUI O     
+            &kp Z                &kp X         &kp C           &kp D             &kp V         &kp K      &kp H           &kp COMMA     &kp DOT      &kp FSLH       
+                                                            &sk Nav   &mo_kp Media SPACE            &mo Num   &bs_del_hyper  
         >;
         };
         num_layer {
             display-name = "Num";
             bindings = <
-            &trans   &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp UNDER             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           &trans
-            &emdash   &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &minus_emdash             &kp H       &kp J      &kp K      &kp L   &hmr LGUI SEMI    &trans
-            &trans   &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           &trans
-                                                  &fn_td F10 N0    &trans       &kp LSHIFT                &none       &trans     &key_repeat
+               &kp TILDE     &fn_td F7 N7   &fn_td F8 N8   &fn_td F9 N9   &kp UNDER             &at_amps    &par_morph    &bkt_morph    &brc_morph       &trans           
+               &kp STAR      &fn_td F4 N4   &fn_td F5 N5   &fn_td F6 N6   &minus_emdash             &kp H       &kp J      &kp K      &kp L   &hmr LGUI SEMI    
+               &kp PIPE      &fn_td F1 N1   &fn_td F2 N2   &fn_td F3 N3   &kp CARET             &kp DLLR    &kp HASH   &trans     &trans        &trans           
+                                                  &fn_td F10 N0           &kp LSHIFT                &none       &trans     
         >;
         };
         nav_layer {
             display-name = "Nav";
             bindings = <
-            &trans       &kp TAB   &kp LS(TAB) &copy_cut        &kp LS(INS)   &kp K_UNDO           &none      NAV_BSPC    NAV_DEL      &none      &to Qwerty   &none
-            &trans       &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP       NAV_RIGHT  &kp RGUI   &none
-            &trans       &none    &kp LC(W)    &none   &kp ESC   &kp LC(LS(T))                     &kp HOME   &kp ENTER   &none    &kp END    &kp INS        &trans
-                                               &trans           &kp PSCRN      &trans              &kp RSHIFT     &trans      &kp LCTRL
+                   &kp TAB   &kp LS(TAB) &copy_cut        &kp LS(INS)   &kp K_UNDO           &none      NAV_BSPC    NAV_DEL      &none      &to Qwerty   
+                   &sk LGUI  &sk LALT    &sk LCTRL        &sk LSHIFT    &kp LG(F)            NAV_LEFT   NAV_DOWN    NAV_UP       NAV_RIGHT  &kp RGUI   
+                   &none    &kp LC(W)    &none   &kp ESC   &kp LC(LS(T))                     &kp HOME   &kp ENTER   &none    &kp END    &kp INS        
+                                               &trans           &kp PSCRN                    &kp RSHIFT     &trans      
         >;
         };
         media_layer {
             display-name = "Media";
             bindings = <
-            &trans   &kp LG(L)   &toggletab  &none            &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &none    &trans
-            &trans   &kp LG(H)   &kp LC(LS(TAB))  &kp RC(TAB)     &trans     &none                  U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              &trans
-            &trans   &kp LG(P)    NAV_LEFT    NAV_RIGHT    &kp ESC     &none            &none       &kp ENTER       &none     &kp K_APPLICATION   &none               &none
-                                             &trans           &trans          &trans               &trans      &trans          &trans
+               &kp LG(L)   &toggletab  &none            &kp K_VOL_DN    &kp K_VOL_UP         U_WH_U      &mkp LCLK       U_MS_U    &mkp RCLK           &none    
+               &kp LG(H)   &kp LC(LS(TAB))  &kp RC(TAB)     &trans     &none                  U_WH_D      U_MS_L          U_MS_D    U_MS_R              &trans              
+               &kp LG(P)    NAV_LEFT    NAV_RIGHT    &kp ESC     &none            &none       &kp ENTER       &none     &kp K_APPLICATION   &none               
+                                             &trans           &trans                         &trans      &trans          
         >;
         };
         vim_layer {
             display-name = "Vim";
             bindings = <
-            &trans   &vim_q          &vim_w       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   &none
-            &trans   &none           &vim_pbuf      &none       &vim_nbuf       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      &none
-            &trans   &tmux_max_pane  &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        &ext_power EP_ON
-                                               &trans     &trans      &trans          &trans        &kp LC(W)         &trans
+               &vim_q          &vim_w       &none       &none       &none           &tmux_prev_win  &kp LC(D)    &kp LC(U)  &tmux_next_win   &none   
+               &none           &vim_pbuf      &none       &vim_nbuf       &none           &tmux_left      &tmux_down   &tmux_up   &tmux_right     &none      
+               &tmux_max_pane  &kp LG(X)   &vim_ciw    &vim_diw    &none           &bt BT_CLR          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3        
+                                                    &trans      &trans          &trans        &kp LC(W)         
         >;
         };
         qwerty_layer {
           display-name = "Qwerty";
             bindings = <
-            &kp TAB     &kp Q         &kp W         &kp E           &kp R             &kp T                 &kp Y      &kp U      &kp I         &kp O        &kp P       &kp GRAVE
-            &kp LSHIFT    &kp A         &kp S         &kp D           &kp F             &kp G                 &kp H      &kp J      &kp K         &kp L        &kp SEMI    &kp ENTER
-            &kp LCTRL    &kp Z         &kp X         &kp C           &kp V             &kp B                 &kp N      &kp M      &kp COMMA     &kp DOT      &kp FSLH    &key_repeat
-            &kp LALT    &kp SPACE   &kp ESC            &mo Num    &bs_del_hyper   &kp LCTRL
+            &kp Q         &kp W         &kp E           &kp R             &kp T                 &kp Y      &kp U      &kp I         &kp O        &kp P       
+            &kp A         &kp S         &kp D           &kp F             &kp G                 &kp H      &kp J      &kp K         &kp L        &kp SEMI    
+            &kp Z         &kp X         &kp C           &kp V             &kp B                 &kp N      &kp M      &kp COMMA     &kp DOT      &kp FSLH    
+            &kp LALT    &kp SPACE   &             &mo Num    &bs_del_hyper   & 
         >;
         };
     };

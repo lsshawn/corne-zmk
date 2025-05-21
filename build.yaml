@@ -13,9 +13,8 @@
 #
 ---
 include:
-  - board: nrfmicro_13
-    shield: corne_left
-  - board: nrfmicro_13
-    shield: corne_right
-  - board: nrfmicro_13
-    shield: settings_reset
+  - board: nice_nano_v2
+    shield: cradio_left
+  - board: nice_nano_v2
+    shield: cradio_right
+
